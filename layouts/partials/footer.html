@@ -1,0 +1,27 @@
+{{/* Pied de page condensé : identité + LinkedIn + page de l'École, puis logo et mentions.
+     Mail et devis : dans le bandeau d'appel (partials/appel-contact.html) et sur /contact/.
+     Pas de plan du site (le menu suffit) ; le bilan est sur /association/. */}}
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__haut">
+      <p class="site-footer__id">
+        <span class="site-footer__name">CartaData</span>
+        Association aspirante Junior-Entreprise de l'<a href="{{ site.Params.ecole_url }}" target="_blank" rel="noopener">École nationale des chartes – PSL<span class="sr-only"> (nouvelle fenêtre)</span></a>
+      </p>
+      <ul class="list-unstyled site-footer__liens">
+        {{ with site.Params.linkedin_url }}<li><a href="{{ . }}" target="_blank" rel="noopener">LinkedIn<span class="sr-only"> : CartaData (nouvelle fenêtre)</span></a></li>{{ end }}
+        {{ with site.Params.page_ecole_url }}<li><a href="{{ . }}" target="_blank" rel="noopener">Notre page sur le site de l'École<span class="sr-only"> (nouvelle fenêtre)</span></a></li>{{ end }}
+      </ul>
+    </div>
+    <div class="site-footer__bottom">
+      {{ with resources.Get "images/logos/logo-enc-psl-blanc.png" }}
+      {{ $l := .Resize "320x webp" }}
+      <a href="{{ site.Params.ecole_url }}" target="_blank" rel="noopener" class="site-footer__ecole">
+        <img src="{{ $l.RelPermalink }}" width="140" height="{{ div (mul $l.Height 140) $l.Width }}" alt="École nationale des chartes – PSL">
+        <span class="sr-only"> (nouvelle fenêtre)</span>
+      </a>
+      {{ end }}
+      <p class="mb-0">© {{ now.Year }} CartaData · <a href="{{ "mentions-legales/" | relURL }}">Mentions légales</a></p>
+    </div>
+  </div>
+</footer>

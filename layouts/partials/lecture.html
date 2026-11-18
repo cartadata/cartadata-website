@@ -1,0 +1,6 @@
+{{/* Liste clé → valeur affichée comme une notice (sortie de modèle, métadonnées). */}}
+<dl class="lecture">
+  {{ range . }}
+  <div class="lecture__row"><dt>{{ .cle }}</dt><dd>{{ .valeur }}</dd></div>
+  {{ end }}
+</dl>

@@ -1,0 +1,53 @@
+{{ define "main" }}
+{{ partial "page-header.html" . }}
+<div class="container">
+  {{/* Trombinoscope : bureau élu, bureau étendu, puis experts classés par pôle. */}}
+  {{ $visibles := partial "equipe-visible.html" . }}
+  {{ $bureau := where $visibles "groupe" "bureau" }}
+  {{ $etendu := where $visibles "groupe" "etendu" }}
+  {{ if $visibles }}
+  <section class="section-bas" aria-labelledby="titre-equipe">
+    <h2 id="titre-equipe" class="h-section">L'équipe {{ hugo.Data.equipe.annee }}</h2>
+    {{ with $bureau }}
+    <h3 class="trombi__titre">Le bureau</h3>
+    <ul class="row list-unstyled trombi">{{ range . }}{{ partial "personne.html" (merge . (dict "poles" slice "col" "col-sm-6 col-lg-3")) }}{{ end }}</ul>
+    {{ end }}
+    {{ with $etendu }}
+    <h3 class="trombi__titre">Le bureau étendu</h3>
+    <ul class="row list-unstyled trombi">{{ range . }}{{ partial "personne.html" (merge . (dict "poles" slice "col" "col-sm-6 col-lg-3")) }}{{ end }}</ul>
+    {{ end }}
+
+    {{/* Experts : liste compacte par pôle, sans photo (y compris les membres du bureau). */}}
+    <h3 class="trombi__titre">Les experts de pôle</h3>
+    <dl class="experts">
+      {{ range partial "poles-liste.html" . }}
+      {{ $slug := .File.ContentBaseName }}
+      {{ $noms := slice }}
+      {{ range $visibles }}{{ if in (.poles | default slice) $slug }}{{ $noms = $noms | append .nom }}{{ end }}{{ end }}
+      {{ with $noms }}
+      <div class="experts__ligne">
+        <dt>{{ with site.GetPage (printf "poles/%s" $slug) }}<a href="{{ .RelPermalink }}"><span class="poles__num">{{ .Params.numero }}</span> {{ .Params.court }}</a>{{ end }}</dt>
+        <dd>{{ delimit . ", " " et " }}</dd>
+      </div>
+      {{ end }}
+      {{ end }}
+    </dl>
+  </section>
+  {{ end }}
+
+  <div class="row section-bas">
+    <div class="col-lg-7 mb-5 mb-lg-0 prose">{{ .Content }}</div>
+    <aside class="col-lg-5" aria-labelledby="titre-asso-chiffres">
+      {{ with hugo.Data.chiffres }}
+      <h2 id="titre-asso-chiffres" class="h-section">En {{ .annee }}</h2>
+      <ul class="chiffres chiffres--colonne list-unstyled">
+        {{ range .items }}<li><span class="chiffres__valeur">{{ .valeur }}</span> <span class="chiffres__libelle">{{ .libelle }}{{ with .detail }}<br><span class="texte-secondaire">{{ . }}</span>{{ end }}</span></li>{{ end }}
+      </ul>
+      <p><a class="btn-cd" href="{{ site.Params.brochure_url | relURL }}" target="_blank" rel="noopener">Télécharger le bilan {{ .annee }}<span class="sr-only"> (PDF, 2 Mo, nouvelle fenêtre)</span></a></p>
+      <p class="texte-secondaire petit">Brochure-bilan de l'association, PDF, 2 Mo. Source des chiffres ci-dessus.</p>
+      {{ end }}
+    </aside>
+  </div>
+</div>
+{{ partial "appel-contact.html" . }}
+{{ end }}

@@ -1,0 +1,28 @@
+{{/* Une démo de data/demos.yml. Le cadre du service tiers n'est créé qu'au clic
+     (assets/js/site.js) : aucun appel au tiers sans action du visiteur. Sans JS,
+     le bouton reste un lien. RGAA 2.1 : titre du cadre. */}}
+{{- $d := . -}}
+<article class="demo">
+  <div class="row">
+    <div class="col-lg-5 mb-4 mb-lg-0">
+      <p class="label">{{ $d.hebergeur }}</p>
+      <h3 class="demo__titre">{{ $d.titre }}</h3>
+      <p>{{ $d.resume }}</p>
+      <p class="demo__actions">
+        <a class="btn-cd" href="{{ $d.url }}" target="_blank" rel="noopener">Ouvrir dans un nouvel onglet<span class="sr-only"> : {{ $d.titre }}</span></a>
+        {{ with $d.realisation }}{{ with site.GetPage (printf "realisations/%s" .) }}<a class="lien-suite" href="{{ .RelPermalink }}">Le projet</a>{{ end }}{{ end }}
+      </p>
+      {{ with $d.note }}<p class="texte-secondaire petit">{{ . }}</p>{{ end }}
+    </div>
+    <div class="col-lg-7">
+      {{ if $d.embed }}
+      <div class="demo__cadre" data-embed="{{ $d.embed }}" data-titre="{{ $d.titre }}">
+        <a class="demo__charger" href="{{ $d.url }}" target="_blank" rel="noopener">
+          <span class="demo__charger-texte">Charger la démo ici</span>
+          <span class="demo__charger-meta">hébergée par {{ $d.hebergeur }}</span>
+        </a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</article>

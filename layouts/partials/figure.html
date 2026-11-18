@@ -1,0 +1,15 @@
+{{/* Image d'assets/ redimensionnée en WebP, avec largeur/hauteur explicites
+     (pas de saut de mise en page). Remplace le partial `image.html` du module
+     gethugothemes, inutile ici.
+     Appel : partial "figure.html" (dict "src" "images/…" "alt" "…" "largeur" 900 "class" "…") */}}
+{{- $img := resources.Get .src -}}
+{{- if $img -}}
+{{- $l := .largeur | default 900 -}}
+{{- $x1 := $img.Resize (printf "%dx webp q80" $l) -}}
+{{- $x2 := $img.Resize (printf "%dx webp q75" (math.Min (mul $l 2) $img.Width | int)) -}}
+<img src="{{ $x1.RelPermalink }}" srcset="{{ $x1.RelPermalink }} 1x, {{ $x2.RelPermalink }} 2x"
+  width="{{ $x1.Width }}" height="{{ $x1.Height }}" alt="{{ .alt }}"
+  {{- with .class }} class="{{ . }}"{{ end }} loading="{{ .loading | default "lazy" }}" decoding="async">
+{{- else -}}
+{{- errorf "figure.html : image introuvable dans assets/ : %s" .src -}}
+{{- end -}}

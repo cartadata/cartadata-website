@@ -1,0 +1,2 @@
+{{- /* Adresse de l'association, protégée contre le moissonnage. Usage : {{< courriel >}} */ -}}
+{{- partial "mailto-protege.html" (dict "adresse" site.Params.email) -}}

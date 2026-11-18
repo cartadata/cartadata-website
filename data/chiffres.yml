@@ -1,0 +1,19 @@
+# Chiffres de l'exercice 2025 — source : brochure-bilan 2025 (p. 3), publiée sur
+# la page de l'association sur le site de l'École (params.brochure_url).
+# À remplacer par le bilan 2026 dès sa parution.
+annee: 2025
+items:
+  - valeur: "56"
+    libelle: "missions réalisées"
+    detail: "en transcription, data science et bases de données"
+  - valeur: "49"
+    libelle: "partenaires et clients"
+  - valeur: "53"
+    libelle: "membres"
+    detail: "archivistes paléographes, étudiants des masters TNAH et Humanités numériques, doctorants"
+  - valeur: "15 000"
+    libelle: "pages ou données"
+    detail: "transcrites, expertisées et valorisées"
+  - valeur: "11 k€"
+    libelle: "reversés aux étudiants"
+    detail: "rémunération nette des élèves et étudiants"

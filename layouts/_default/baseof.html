@@ -1,0 +1,19 @@
+{{/* Surcharge projet de themes/educenter-hugo/layouts/_default/baseof.html
+     (même structure que chartes/dh-website) :
+     · RGAA 8.3  — langue par défaut explicite ;
+     · RGAA 12.7 — lien d'évitement, visible à la prise de focus ;
+     · RGAA 12.6 — landmarks header / main / footer. */}}
+<!DOCTYPE html>
+<html lang="fr">
+{{- partial "head.html" . -}}
+<body class="page-{{ .Section | default "accueil" }}{{ if site.Params.bordures }} avec-bordures{{ end }}">
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+  {{- partial "header.html" . -}}
+  <main id="contenu" tabindex="-1">
+    {{- block "main" . }}{{- end }}
+  </main>
+  {{- partial "footer.html" . -}}
+  {{- $js := resources.Get "js/site.js" | minify | fingerprint -}}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+</body>
+</html>

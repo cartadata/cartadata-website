@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div class="page-head">
+  <div class="container">
+    <p class="label">{{ with site.GetPage (printf "poles/%s" .Params.pole) }}<a href="{{ .RelPermalink }}#realisations">Pôle {{ .Params.numero }} · {{ .Title }}</a>{{ end }} · {{ .Params.periode }}</p>
+    <h1 class="page-head__title">{{ .Title }}</h1>
+    <p class="page-head__intro">{{ .Params.resume }}</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row section-bas">
+    <div class="col-lg-8 mb-5 mb-lg-0">
+      {{ with .Params.image }}
+      <figure class="real-figure">
+        {{ partial "figure.html" (dict "src" . "alt" $.Params.image_alt "largeur" 760 "loading" "eager") }}
+      </figure>
+      {{ end }}
+      <div class="prose">{{ .Content }}</div>
+    </div>
+    <aside class="col-lg-4" aria-label="Fiche du projet">
+      <dl class="fiche">
+        <div><dt>Partenaire</dt><dd>{{ .Params.partenaire }}</dd></div>
+        <div><dt>Période</dt><dd>{{ .Params.periode }}</dd></div>
+        {{ with .Params.equipe }}<div><dt>Équipe</dt><dd>{{ delimit . ", " " et " }}</dd></div>{{ end }}
+        {{ with .Params.pole }}<div><dt>Pôle</dt><dd>{{ partial "poles.html" (slice .) }}</dd></div>{{ end }}
+      </dl>
+      {{ with .Params.chiffres }}
+      <ul class="chiffres chiffres--colonne list-unstyled">
+        {{ range . }}<li><span class="chiffres__valeur">{{ .valeur }}</span> <span class="chiffres__libelle">{{ .libelle }}</span></li>{{ end }}
+      </ul>
+      {{ end }}
+      {{ with .Params.liens }}
+      <h2 class="h-section">Voir en ligne</h2>
+      <ul class="liste-filet list-unstyled">
+        {{ range . }}<li><a class="liste-filet__lien" href="{{ .url }}" target="_blank" rel="noopener"><span class="liste-filet__titre">{{ .titre }}</span><span class="sr-only"> (nouvelle fenêtre)</span></a></li>{{ end }}
+      </ul>
+      {{ end }}
+    </aside>
+  </div>
+</div>
+{{ partial "appel-contact.html" . }}
+{{ end }}

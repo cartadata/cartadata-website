@@ -1,0 +1,46 @@
+html { font-size: 100%; }
+body {
+  font-family: $font-texte;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: $texte;
+  background: $blanc;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, .h-titre {
+  font-family: $font-titre;
+  font-weight: 500;
+  color: $encre;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+}
+h2 { font-size: clamp(1.75rem, 3vw, 2.4rem); margin-bottom: 1.25rem; }
+h3 { font-size: 1.5rem; }
+
+a { color: $rouge; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { color: $rouge-fonce; text-decoration-thickness: 2px; }
+
+p { margin-bottom: 1rem; }
+strong { font-weight: 600; }
+em { font-style: italic; }
+
+[lang="fa"] { font-family: $font-persan; }
+
+::selection { background: rgba($rouge, 0.18); }
+
+// Étiquette mono : cotes, rubriques, métadonnées.
+.label {
+  display: block;
+  font-family: $font-mono;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $gris;
+  margin-bottom: 0.75rem;
+  a { color: inherit; }
+}
+.texte-secondaire { color: $gris; }
+.petit { font-size: 0.9rem; }

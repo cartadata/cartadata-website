@@ -1,0 +1,11 @@
+{{/* Bandeau fin d'appel au contact, en bas des pages (sauf /contact/).
+     Le mail et le formulaire n'apparaissent qu'ici : le pied de page ne les répète pas. */}}
+<aside class="appel" aria-label="Demander un devis">
+  <div class="container appel__inner">
+    <p class="appel__texte"><strong class="appel__titre">Un fonds à lire, à structurer, à cartographier&nbsp;?</strong></p>
+    <p class="appel__actions">
+      <a class="btn-cd btn-cd--plein" href="{{ site.Params.devis_url }}" target="_blank" rel="noopener">Demander un devis<span class="sr-only"> (formulaire de l'École, nouvelle fenêtre)</span></a>
+      <span class="appel__mail">ou {{ partial "mailto-protege.html" (dict "adresse" site.Params.email) }}</span>
+    </p>
+  </div>
+</aside>

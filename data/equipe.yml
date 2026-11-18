@@ -1,0 +1,83 @@
+# Trombinoscope (page /association/ ; les experts apparaissent aussi sur la page de leur pôle).
+#
+# ⚠ PUBLICATION : une personne n'apparaît sur le site EN LIGNE que si `accord: true`
+#   (accord écrit pour la diffusion de son nom, et de sa photo s'il y en a une).
+#   En local (`hugo server`), tout le monde s'affiche, les fiches sans accord sont signalées.
+# ⚠ PHOTOS : en ligne, elles ne s'affichent que si `params.equipe_photos = true` (hugo.toml),
+#   à activer quand tout le monde en a une (un trombinoscope à moitié illustré fait négligé).
+#
+# Schéma :
+#   - nom: "Prénom Nom"
+#     groupe: "bureau" | "etendu" | ""   # bureau élu (PV d'AG) / bureau étendu / expert seul
+#     role: "Président"                 # fonction ; vide pour un expert seul
+#     poles: ["geolocalisation"]        # pôles dont la personne est experte (slugs de content/poles/)
+#     parcours: "…"                     # facultatif
+#     photo: "images/equipe/xxx.jpg"    # facultatif, dans assets/ (portrait, affiché en noir et blanc)
+#     lien: "https://…"                 # facultatif
+#     accord: false
+#
+# Sources : PV de l'AG du 03/11/2026 et liste des dirigeants (admin/) pour le bureau élu ;
+# mail du nouveau bureau et journal de bord (11/11/2026) pour le bureau étendu et les experts.
+# Accords recueillis par Mathieu (18/11/2026). Cursus donnés par Mathieu (19/11/2026).
+# Photos (19/11/2026) : LinkedIn, fournies et attribuées par Mathieu ; Owen et Chahan = portraits de la page de l'École ;
+# Mathias = recadrage d'une photo de groupe (basse définition). Pas de photo pour les experts hors bureau (décision 19/11).
+annee: "2026-2027"
+membres:
+  # --- Bureau élu (AG du 3 novembre 2026) ---
+  - nom: "Mathieu Rivière"
+    groupe: "bureau"
+    role: "Président"
+    poles: ["geolocalisation"]
+    parcours: "Master 2 Humanités numériques"
+    photo: "images/equipe/mathieu-riviere.jpg"
+    accord: true
+  - nom: "Clémence Poirier-Coutansais"
+    groupe: "bureau"
+    role: "Vice-présidente"
+    parcours: "Élève en 1re année (cursus archiviste paléographe)"
+    photo: "images/equipe/clemence-poirier-coutansais.jpg"
+    accord: true
+  - nom: "Mathias Garnier"
+    groupe: "bureau"
+    role: "Trésorier"
+    poles: ["htr"]
+    photo: "images/equipe/mathias-garnier.jpg"
+    parcours: "Master 2 Humanités numériques"
+    accord: true
+  - nom: "Owen Mouyen-Bié"
+    groupe: "bureau"
+    role: "Secrétaire"
+    poles: ["donnees"]
+    parcours: "Master 2 Technologies numériques appliquées à l'histoire"
+    photo: "images/equipe/owen-mouyen-bie.jpg"
+    accord: true
+  # --- Bureau étendu ---
+  - nom: "Thaïs Raffray"
+    groupe: "etendu"
+    role: "Responsable clientèle"
+    poles: ["vision"]
+    parcours: "Master 2 Humanités numériques"
+    photo: "images/equipe/thais-raffray.jpg"
+    accord: true
+  - nom: "Marisol de Nazelle"
+    groupe: "etendu"
+    role: "Chargée de communication"
+    parcours: "Master 2 Humanités numériques"
+    photo: "images/equipe/marisol-de-nazelle.jpg"
+    accord: true
+  - nom: "Chahan Vidal-Gorène"
+    groupe: "etendu"
+    role: "Coordinateur"
+    parcours: "Responsable du master « Humanités numériques »"
+    photo: "images/equipe/chahan-vidal-gorene.jpg"
+    # ⚠ Pas dans la liste d'accords du 18/11 : à confirmer avant de passer à true.
+    accord: false
+  # --- Experts de pôle hors bureau ---
+  - nom: "Maxime Létoffé"
+    poles: ["geolocalisation"]
+    parcours: "Master 2 Humanités numériques"
+    accord: true
+  - nom: "Chiara Tedesco"
+    poles: ["vision"]
+    parcours: "Master 2 Humanités numériques"
+    accord: true

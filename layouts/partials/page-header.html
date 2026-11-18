@@ -1,0 +1,8 @@
+{{/* Titre de page (h1) + chapeau. Pas de bannière photo : le contenu commence tout de suite. */}}
+<div class="page-head">
+  <div class="container">
+    {{ with .Params.surtitre }}<p class="label">{{ . }}</p>{{ end }}
+    <h1 class="page-head__title">{{ .Title }}</h1>
+    {{ with .Params.intro }}<p class="page-head__intro">{{ . | markdownify }}</p>{{ end }}
+  </div>
+</div>

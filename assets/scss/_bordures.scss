@@ -1,0 +1,28 @@
+// Bordures latérales « TEI » — reprises du fond du sondage du bureau (Forms) :
+// du balisage TEI clair sur rouge sombre, coupé de bandes diagonales.
+// Seulement sur grand écran, dans les marges hors du conteneur (1140 px) ;
+// les sections pleine largeur (en-tête, chiffres, appel, pied) passent par-dessus.
+// Désactivable : params.bordures = false (hugo.toml).
+$bordure-fond: #6f1424;
+$bordure-min: 1320px;
+
+@media (min-width: $bordure-min) {
+  body.avec-bordures { position: relative; }
+  body.avec-bordures::before,
+  body.avec-bordures::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    width: calc((100% - 1140px) / 2 - 24px);
+    background-color: $bordure-fond;
+    background-image:
+      repeating-linear-gradient(118deg, transparent 0 220px, rgba($blanc, 0.06) 220px 300px, transparent 300px 420px),
+      url('../images/bordure-tei.svg');
+    background-repeat: repeat, repeat-y;
+    pointer-events: none;
+  }
+  body.avec-bordures::before { left: 0; background-position: 0 0, right -340px top 0; }
+  body.avec-bordures::after { right: 0; background-position: 0 0, left 0 top -300px; }
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="612" viewBox="0 0 620 612">
+<!-- Bordures latérales du site (assets/scss/_bordures.scss) : TEI décoratif, image de fond. -->
+<g font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="15" fill="#ffffff" fill-opacity="0.16">
+<text x="8" y="20">&lt;TEI xmlns="http://www.tei-c.org/ns/1.0"&gt;</text>
+<text x="8" y="44">  &lt;teiHeader&gt;&lt;fileDesc&gt;&lt;titleStmt&gt;</text>
+<text x="8" y="68">    &lt;title&gt;CartaData&lt;/title&gt;</text>
+<text x="8" y="92">    &lt;respStmt&gt;&lt;orgName&gt;Pôle OCR, HTR&lt;/orgName&gt;&lt;/respStmt&gt;</text>
+<text x="8" y="116">  &lt;date when="2026"&gt;2026-2027&lt;/date&gt;</text>
+<text x="8" y="140">&lt;listPerson type="bureau"&gt;</text>
+<text x="8" y="164">  &lt;person&gt;&lt;persName&gt;CartaData&lt;/persName&gt;&lt;/person&gt;</text>
+<text x="8" y="188">&lt;choice&gt;&lt;sic&gt;charta&lt;/sic&gt;&lt;corr&gt;carta&lt;/corr&gt;&lt;/choice&gt;</text>
+<text x="8" y="212">&lt;orgName&gt;Géolocalisation&lt;/orgName&gt;</text>
+<text x="8" y="236">&lt;unclear reason="faded"&gt;data&lt;/unclear&gt;</text>
+<text x="8" y="260">&lt;lb n="12"/&gt;</text>
+<text x="8" y="284">&lt;orgName&gt;Vision par ordinateur&lt;/orgName&gt;</text>
+<text x="8" y="308">&lt;placeName ref="#avignon"&gt;Avignon&lt;/placeName&gt;</text>
+<text x="8" y="332">&lt;orgName&gt;Structuration de données&lt;/orgName&gt;</text>
+<text x="8" y="356">&lt;unclear reason="faded"&gt;data&lt;/unclear&gt;&lt;lb n="13"/&gt;</text>
+<text x="8" y="380">&lt;choice&gt;&lt;abbr&gt;ENC&lt;/abbr&gt;&lt;expan&gt;École des chartes&lt;/expan&gt;&lt;/choice&gt;</text>
+<text x="8" y="404">&lt;orgName&gt;Annotation experte&lt;/orgName&gt;</text>
+<text x="8" y="428">&lt;date when="2025"&gt;2025&lt;/date&gt;&lt;lb n="14"/&gt;</text>
+<text x="8" y="452">&lt;persName role="expert"&gt;Carta Data&lt;/persName&gt;</text>
+<text x="8" y="476">&lt;choice&gt;&lt;orig&gt;Cartadata&lt;/orig&gt;&lt;reg&gt;CartaData&lt;/reg&gt;&lt;/choice&gt;</text>
+<text x="8" y="500">&lt;orgName&gt;Numérisation&lt;/orgName&gt;</text>
+<text x="8" y="524">&lt;settlement&gt;Paris&lt;/settlement&gt;</text>
+<text x="8" y="548">&lt;add place="margin"&gt;ancien évêché&lt;/add&gt;</text>
+<text x="8" y="572">&lt;/titleStmt&gt;&lt;/fileDesc&gt;&lt;/teiHeader&gt;</text>
+<text x="8" y="596">&lt;/TEI&gt;</text>
+</g>
+</svg>

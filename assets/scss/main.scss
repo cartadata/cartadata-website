@@ -1,0 +1,15 @@
+// CartaData — feuille principale.
+// Contrairement à dh-website, on n'importe PAS les feuilles du thème
+// educenter (boutons, sections, slider…) : seule la grille Bootstrap 4
+// (static/plugins du thème) est chargée, avant cette feuille.
+// ⚠ Le CSS compilé doit rester 100 % ASCII (commentaires `//`, `content: '\2014'`) :
+// sinon libsass ajoute un BOM, que `hugo server` retire en servant le fichier,
+// et l'empreinte `integrity` ne correspond plus (Safari refuse la feuille).
+@import 'variables';
+@import 'fonts';
+@import 'base';
+@import 'layout';
+@import 'composants';
+@import 'pages';
+@import 'bordures';
+@import 'a11y';

@@ -1,0 +1,102 @@
+# Site de CartaData — aspirante Junior-Entreprise de l'École nationale des chartes – PSL.
+# Même socle que le site du master HN (chartes/dh-website) : Hugo + thème
+# educenter-hugo en sous-module, surchargé dans layouts/ et assets/.
+# Le thème ne fournit plus guère que Bootstrap (grille) et les gabarits de repli.
+
+# Servi par GitHub Pages (site de projet) depuis le dépôt cartadata/cartadata-website.
+# ⚠ relativeURLs = false : avec un sous-chemin (/cartadata-website/), relativeURLs
+# produisait des liens faux (../../cartadata-website/…). Les liens sont donc relatifs
+# à la racine du serveur et incluent le sous-chemin : si un domaine propre remplace
+# un jour cette adresse, changer baseURL et params.site_url (rien d'autre).
+# Dans les gabarits : `"x/" | relURL` ou site.Home.RelPermalink, JAMAIS `"/" | relURL`.
+baseURL = "https://cartadata.github.io/cartadata-website/"
+relativeURLs = false
+locale = "fr-fr"
+defaultContentLanguage = "fr"
+title = "CartaData"
+theme = "educenter-hugo"
+disableLanguages = ["en"]
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term", "rss"]
+
+[params]
+description = "CartaData, aspirante Junior-Entreprise de l'École nationale des chartes – PSL : HTR, géolocalisation, computer vision et histoire de l'art, structuration de données pour les fonds patrimoniaux."
+author = "CartaData"
+# Origine absolue, pour og:url / og:image / canonical uniquement (cf. head.html).
+# Si un domaine de l'École remplace cartadata.github.io, le changer ici.
+site_url = "https://cartadata.github.io/cartadata-website/"
+email = "cartadata@chartes.psl.eu"
+devis_url = "https://www.chartes.psl.eu/demande-de-devis-cartadata"
+# Sondage du bureau 2026-2027 (pôles qui intéressent les étudiants, candidatures d'experts).
+# Vider pour masquer le bouton sur /contact/.
+sondage_url = "https://forms.cloud.microsoft/e/D40PAUx6n8"
+# Page LinkedIn de l'association (pied de page, contact, données structurées). Vide = rien n'est affiché.
+linkedin_url = "https://www.linkedin.com/company/cartadata/"
+# Photos du trombinoscope (data/equipe.yml) : tout le monde en a une depuis le 19/11.
+equipe_photos = true
+# Bordures latérales TEI sur grand écran (assets/scss/_bordures.scss).
+bordures = true
+ecole_url = "https://www.chartes.psl.eu"
+# ⚠ Le jour où cette page de l'École redirige vers notre site, VIDER ce paramètre
+# (sinon le lien du pied de page boucle sur nous-mêmes).
+page_ecole_url = "https://www.chartes.psl.eu/vie-de-campus/vie-etudiante-et-associative/cartadata"
+# Brochure hébergée par le site lui-même (copie de celle de l'École), pour ne plus dépendre
+# de la page de l'École quand elle deviendra une simple redirection.
+brochure_url = "documents/2025-cartadata-brochure-bilan.pdf"
+
+################### Navigation principale ####################
+[menus]
+# Philosophie « un clic » : chaque pôle OUVERT est directement dans le menu ; les pôles en
+# construction (annotation, numérisation) sont sur l'accueil et /poles/.
+[[menus.main]]
+name = "OCR, HTR, transcription"
+url = "/poles/htr/"
+weight = 1
+
+[[menus.main]]
+name = "Géolocalisation"
+url = "/poles/geolocalisation/"
+weight = 2
+
+[[menus.main]]
+name = "Vision par ordinateur"
+url = "/poles/vision/"
+weight = 3
+
+[[menus.main]]
+name = "Structuration de données"
+url = "/poles/donnees/"
+weight = 4
+
+[[menus.main]]
+name = "L'association"
+url = "/association/"
+weight = 5
+
+[[menus.main]]
+name = "Contact"
+url = "/contact/"
+weight = 6
+
+############################# Build ##############################
+[build]
+[build.buildStats]
+enable = false
+
+[markup]
+[markup.goldmark.renderer]
+unsafe = true
+[markup.goldmark.extensions.typographer]
+# Guillemets français saisis à la main dans le contenu : on n'en ajoute pas.
+disable = true
+
+[imaging]
+resampleFilter = "lanczos"
+[imaging.jpeg]
+quality = 82
+[imaging.webp]
+quality = 80
+
+[outputs]
+home = ["HTML"]
+section = ["HTML"]

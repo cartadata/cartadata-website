@@ -1,0 +1,11 @@
+{{/* Membres affichables : en production, seulement ceux qui ont donné leur accord
+     (et dont le nom est saisi) ; en local, tout le monde, pour relecture.
+     Retourne une liste (partial utilisé avec `partial "equipe-visible.html" .`). */}}
+{{- $tous := hugo.Data.equipe.membres | default slice -}}
+{{- $visibles := slice -}}
+{{- range $tous -}}
+  {{- if or (not hugo.IsProduction) (and .accord .nom) -}}
+    {{- $visibles = $visibles | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- return $visibles -}}

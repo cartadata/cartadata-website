@@ -1,0 +1,19 @@
+// Charte CartaData — rouge relevé sur le logo (#bd1f3a), même famille que le
+// rouge pompéien de l'École (#bc052d) sans s'y confondre.
+$rouge: #bd1f3a;
+$rouge-fonce: #951629;
+$encre: #1c1a18;
+$texte: #2d2a27;
+$gris: #69625b;        // 5,9:1 sur blanc — AA
+$filet: #ddd6cd;
+$papier: #f8f6f2;
+$blanc: #fff;
+
+$font-titre: 'Bodoni Moda', 'Didot', 'Bodoni 72', Georgia, serif;
+$font-texte: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+$font-mono: 'IBM Plex Mono', 'SFMono-Regular', Menlo, Consolas, monospace;
+$font-persan: 'Noto Naskh Arabic', 'Geeza Pro', 'Tahoma', sans-serif;
+
+$lg: 992px;
+// Menu replié en dessous : 6 entrées longues (noms complets des pôles) ne tiennent pas sur une ligne avant 1200 px.
+$menu: 1200px;

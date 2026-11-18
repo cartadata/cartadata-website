@@ -1,0 +1,18 @@
+// Polices auto-hébergées (static/fonts, licence SIL OFL) — cf. head.html.
+@mixin face($famille, $fichier, $graisse, $style: normal) {
+  @font-face {
+    font-family: $famille;
+    src: url('../fonts/#{$fichier}.woff2') format('woff2');
+    font-weight: $graisse;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+@include face('Bodoni Moda', 'bodoni-moda-latin-400-normal', 400);
+@include face('Bodoni Moda', 'bodoni-moda-latin-500-normal', 500);
+@include face('Bodoni Moda', 'bodoni-moda-latin-400-italic', 400, italic);
+@include face('IBM Plex Sans', 'ibm-plex-sans-latin-400-normal', 400);
+@include face('IBM Plex Sans', 'ibm-plex-sans-latin-400-italic', 400, italic);
+@include face('IBM Plex Sans', 'ibm-plex-sans-latin-600-normal', 600);
+@include face('IBM Plex Mono', 'ibm-plex-mono-latin-400-normal', 400);
+@include face('IBM Plex Mono', 'ibm-plex-mono-latin-500-normal', 500);

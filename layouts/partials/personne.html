@@ -1,0 +1,18 @@
+{{/* Fiche du trombinoscope. Argument : une entrée de data/equipe.yml.
+     Le filtrage (accord) est fait par l'appelant via partial "equipe-visible.html". */}}
+{{- $p := . -}}
+<li class="{{ $p.col | default "col-sm-6 col-lg-4" }} personne{{ if not $p.accord }} personne--sans-accord{{ end }}">
+  {{/* Photos : toujours en local ; en ligne seulement si params.equipe_photos = true. */}}
+  {{ if and $p.photo (or (not hugo.IsProduction) site.Params.equipe_photos) }}{{ partial "figure.html" (dict "src" $p.photo "alt" "" "largeur" 240 "class" "personne__photo") }}{{ end }}
+  {{ with $p.role }}<p class="personne__role">{{ . }}</p>{{ end }}
+  <p class="personne__nom">
+    {{- if $p.nom -}}
+      {{ with $p.lien }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}{{ $p.nom }}{{ with $p.lien }}<span class="sr-only"> (nouvelle fenêtre)</span></a>{{ end }}
+    {{- else -}}
+      <span class="personne__vide">à compléter</span>
+    {{- end -}}
+  </p>
+  {{ with $p.poles }}<p class="personne__poles"><span class="sr-only">Expertise : </span>{{ partial "poles.html" . }}</p>{{ end }}
+  {{ with $p.parcours }}<p class="personne__parcours">{{ . }}</p>{{ end }}
+  {{ if not $p.accord }}<p class="personne__alerte">Brouillon local : non publié sans accord</p>{{ end }}
+</li>

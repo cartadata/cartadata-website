@@ -1,0 +1,202 @@
+// Boutons -------------------------------------------------------------
+.btn-cd {
+  display: inline-block;
+  font-family: $font-texte;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  color: $encre;
+  background: transparent;
+  border: 1px solid $encre;
+  padding: 0.8rem 1.3rem;
+  text-decoration: none;
+  transition: background-color .15s, color .15s;
+  &:hover { background: $encre; color: $blanc; text-decoration: none; }
+  &--plein {
+    background: $rouge;
+    border-color: $rouge;
+    color: $blanc;
+    &:hover { background: $rouge-fonce; border-color: $rouge-fonce; color: $blanc; }
+  }
+}
+.lien-suite {
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  white-space: nowrap;
+  &::after { content: ' \2192'; }
+  &:hover { text-decoration: underline; }
+}
+
+// Notice : un document et sa lecture -------------------------------------
+.notice {
+  margin: 0;
+  &__img { display: block; width: 100%; height: auto; }
+  figcaption { padding-top: 1rem; }
+  &__cote {
+    font-family: $font-mono;
+    font-size: 0.8rem;
+    color: $gris;
+    margin-bottom: 0.75rem;
+    span { color: $encre; font-weight: 500; }
+  }
+  &__legende { font-size: 0.88rem; color: $gris; margin: 0.75rem 0 0; }
+}
+
+.lecture {
+  margin: 0;
+  border-top: 1px solid $encre;
+  &__row {
+    display: grid;
+    grid-template-columns: minmax(8.5rem, 32%) 1fr;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed $filet;
+  }
+  dt { font-family: $font-mono; font-size: 0.78rem; font-weight: 400; color: $gris; padding-top: 0.2rem; }
+  dd { margin: 0; color: $encre; }
+}
+
+// Spécimen ---------------------------------------------------------------
+.specimen {
+  margin: 0;
+  background: $papier;
+  border: 1px solid $filet;
+  padding: 1.5rem;
+  &__titre { font-family: $font-titre; font-size: 1.25rem; color: $encre; margin-bottom: 1rem; }
+  &__texte {
+    background: $blanc;
+    border-left: 3px solid $rouge;
+    padding: 1rem 1.25rem;
+    font-family: $font-mono;
+    font-size: 0.98rem;
+    p { margin: 0 0 0.4rem; &:last-child { margin: 0; } }
+    [lang="fa"] { font-family: $font-persan; font-size: 1.15rem; line-height: 1.9; }
+  }
+  &__traduction { margin: 1rem 0 0; font-style: italic; .label { display: inline; font-style: normal; margin-right: 0.4rem; } }
+  &__code {
+    background: $encre;
+    color: #f1ece4;
+    font-family: $font-mono;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding: 1.1rem 1.25rem;
+    margin: 0;
+    overflow-x: auto;
+    code { color: inherit; font-size: inherit; }
+  }
+  &__scroll { overflow-x: auto; }
+  &__table {
+    width: 100%;
+    font-size: 0.92rem;
+    border-collapse: collapse;
+    background: $blanc;
+    th, td { padding: 0.55rem 0.75rem; border-bottom: 1px solid $filet; text-align: left; vertical-align: top; }
+    thead th { font-family: $font-mono; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: $gris; border-bottom-color: $encre; }
+    tbody th { font-family: $font-mono; font-weight: 400; font-size: 0.82rem; white-space: nowrap; }
+  }
+  &__image img { display: block; width: 100%; height: auto; margin-bottom: 1rem; }
+  &__source { font-size: 0.85rem; color: $gris; margin-top: 1rem; line-height: 1.5; }
+}
+
+// Pôles : étiquettes -----------------------------------------------------
+.poles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  &__item {
+    display: inline-block;
+    font-family: $font-mono;
+    font-size: 0.78rem;
+    color: $encre;
+    border: 1px solid $filet;
+    padding: 0.2rem 0.6rem;
+    text-decoration: none;
+    &:hover { border-color: $rouge; color: $rouge; text-decoration: none; }
+  }
+  &__num { color: $rouge; margin-right: 0.2rem; }
+}
+
+// Chiffres ---------------------------------------------------------------
+.chiffres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+  margin: 1.25rem 0 1.5rem;
+  li { max-width: 15rem; line-height: 1.35; }
+  &__valeur { display: block; font-family: $font-titre; font-size: 2.1rem; color: $rouge; line-height: 1.1; }
+  &__libelle { font-size: 0.9rem; color: $gris; }
+  &--colonne {
+    flex-direction: column;
+    gap: 0;
+    li { max-width: none; padding: 0.9rem 0; border-bottom: 1px solid $filet; }
+  }
+}
+
+// Listes ----------------------------------------------------------------
+.puces {
+  padding-left: 0;
+  list-style: none;
+  li { position: relative; padding-left: 1.4rem; margin-bottom: 0.6rem; }
+  li::before { content: '\2014'; position: absolute; left: 0; color: $rouge; }
+  &--discretes li { color: $gris; }
+}
+.liste-filet {
+  border-top: 1px solid $encre;
+  li { border-bottom: 1px solid $filet; }
+  &__lien {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1rem 0;
+    color: $encre;
+    text-decoration: none;
+    &::after { content: '\2197'; color: $rouge; }
+    &:hover { color: $rouge; text-decoration: none; .liste-filet__titre { text-decoration: underline; } }
+  }
+  &__titre { font-family: $font-titre; font-size: 1.3rem; line-height: 1.25; flex: 1; }
+  &__meta { font-family: $font-mono; font-size: 0.78rem; color: $gris; white-space: nowrap; }
+}
+
+// Prose (Markdown) -----------------------------------------------------------
+.prose {
+  max-width: 42rem;
+  h2 { font-size: 1.7rem; margin: 2.5rem 0 1rem; &:first-child { margin-top: 0; } }
+  ol, ul { padding-left: 1.3rem; }
+  li { margin-bottom: 0.6rem; }
+  li::marker { color: $rouge; font-family: $font-mono; font-size: 0.9em; }
+}
+
+// Réalisation : résumé ------------------------------------------------------
+.real-resume {
+  border-top: 1px solid $filet;
+  padding: 2.25rem 0;
+  &:first-of-type { border-top-color: $encre; }
+  &__img { display: block; width: 100%; height: auto; }
+  &__meta { font-family: $font-mono; font-size: 0.8rem; color: $gris; margin-bottom: 0.6rem; span { color: $encre; } }
+  &__titre { font-size: clamp(1.5rem, 2.4vw, 2rem); margin-bottom: 0.75rem; a { color: $encre; text-decoration: none; &:hover { color: $rouge; text-decoration: underline; } } }
+  &__texte { max-width: 40rem; }
+}
+
+// Appel à contact ------------------------------------------------------------
+.appel {
+  background: $rouge;
+  color: $blanc;
+  padding: 1.1rem 0;
+  &__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 2rem; }
+  &__texte { margin: 0; }
+  &__titre { font-family: $font-titre; font-weight: 400; font-size: 1.35rem; color: $blanc; }
+  &__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem; margin: 0; }
+  &__mail { color: rgba($blanc, 0.85); font-size: 0.95rem; a { color: $blanc; } }
+  // Bouton inversé sur fond rouge
+  .btn-cd--plein { background: $blanc; border-color: $blanc; color: $rouge; &:hover { background: $encre; border-color: $encre; color: $blanc; } }
+}
+
+@media (max-width: 575px) {
+  .liste-filet__lien { flex-wrap: wrap; }
+  .liste-filet__titre { flex-basis: calc(100% - 2rem); }
+  .liste-filet__meta { order: 3; flex-basis: 100%; }
+}
+.specimen__texte [dir="rtl"] { text-align: right; }

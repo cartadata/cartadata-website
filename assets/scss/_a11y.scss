@@ -1,0 +1,37 @@
+// Correctifs d'accessibilité — en dernier dans la cascade (cf. main.scss).
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 2000;
+  padding: 0.75rem 1.25rem;
+  background: $blanc;
+  color: $rouge;
+  font-weight: 600;
+  border: 2px solid $rouge;
+  &:focus { top: 1rem; }
+}
+main:focus { outline: none; }
+
+// RGAA 10.7 : focus toujours visible, y compris sur fond rouge ou sombre.
+a, button, [tabindex] {
+  &:focus-visible { outline: 3px solid $rouge; outline-offset: 3px; }
+}
+.bande-chiffres a:focus-visible,
+.site-footer a:focus-visible { outline-color: $blanc; }
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}

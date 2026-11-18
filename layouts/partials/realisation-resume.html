@@ -1,0 +1,25 @@
+{{/* Résumé d'une réalisation (accueil, liste). Args : page, image (bool). */}}
+{{- $p := .page -}}
+{{- $avecImage := and .image $p.Params.image -}}
+<article class="real-resume{{ if $avecImage }} real-resume--image{{ end }}">
+  <div class="row">
+    {{ if $avecImage }}
+    <div class="col-lg-5 mb-4 mb-lg-0">
+      <a href="{{ $p.RelPermalink }}" tabindex="-1" aria-hidden="true">
+        {{ partial "figure.html" (dict "src" $p.Params.image "alt" "" "largeur" 560 "class" "real-resume__img") }}
+      </a>
+    </div>
+    {{ end }}
+    <div class="{{ if $avecImage }}col-lg-7{{ else }}col-12{{ end }}">
+      <p class="real-resume__meta"><span>{{ $p.Params.periode }}</span> · {{ $p.Params.partenaire }}</p>
+      <h3 class="real-resume__titre"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
+      <p class="real-resume__texte">{{ $p.Params.resume }}</p>
+      {{ with $p.Params.chiffres }}
+      <ul class="chiffres list-unstyled">
+        {{ range . }}<li><span class="chiffres__valeur">{{ .valeur }}</span> <span class="chiffres__libelle">{{ .libelle }}</span></li>{{ end }}
+      </ul>
+      {{ end }}
+      {{ with $p.Params.pole }}{{ partial "poles.html" (slice .) }}{{ end }}
+    </div>
+  </div>
+</article>

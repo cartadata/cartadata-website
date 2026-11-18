@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ partial "page-header.html" . }}
+<div class="container section-bas">
+  <div class="row">
+    <section class="col-md-6 mb-5 contact-bloc" id="clients" aria-labelledby="titre-clients">
+      <h2 id="titre-clients" class="h-section">Vous avez un projet</h2>
+      <h3 class="contact-bloc__sous-titre">Comment se passe une mission ?</h3>
+      <ol class="etapes">
+        <li>Vous décrivez votre besoin via le formulaire de demande de devis, ou par courriel, même s'il ne correspond à aucun de nos pôles.</li>
+        <li>Nous en discutons avec vous, puis l'association vous adresse une convention d'étude : la mission, son calendrier, son prix.</li>
+        <li>Les experts du pôle concerné constituent l'équipe et suivent l'avancement et la qualité.</li>
+        <li>Les livrables sont remis dans des formats ouverts et documentés.</li>
+      </ol>
+      <p class="texte-secondaire">Aucun travail ne commence avant la validation de la prestation. Convention, contrat et facturation sont établis par l'association.</p>
+      <p><a class="btn-cd btn-cd--plein" href="{{ site.Params.devis_url }}" target="_blank" rel="noopener">Demander un devis<span class="sr-only"> (formulaire de l'École, nouvelle fenêtre)</span></a></p>
+      <p class="texte-secondaire">Ou écrivez-nous directement :</p>
+      <p class="contact-mail">{{ partial "mailto-protege.html" (dict "adresse" site.Params.email) }}</p>
+    </section>
+    <section class="col-md-6 mb-5 contact-bloc" id="etudiants" aria-labelledby="titre-etudiants">
+      <h2 id="titre-etudiants" class="h-section">Vous étudiez à l'École</h2>
+      <p>CartaData confie à ses membres des missions rémunérées. Indiquez-nous les pôles qui vous intéressent : nous vous contacterons quand une mission correspondra à votre profil. Vous pouvez aussi vous proposer comme expert d'un pôle, pour définir les missions avec les clients et les prestataires.</p>
+      {{ with site.Params.sondage_url }}
+      <p><a class="btn-cd" href="{{ . }}" target="_blank" rel="noopener">Indiquer mes pôles<span class="sr-only"> (formulaire Microsoft Forms, nouvelle fenêtre)</span></a></p>
+      <p class="texte-secondaire petit">Connexion avec votre compte de l'École requise.</p>
+      {{ end }}
+      <p class="texte-secondaire">Une question sur l'adhésion : écrivez à la même adresse.</p>
+    </section>
+  </div>
+</div>
+{{ end }}

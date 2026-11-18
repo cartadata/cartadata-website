@@ -1,0 +1,89 @@
+{{ define "main" }}
+{{ $slug := .File.ContentBaseName }}
+{{ $parent := "" }}{{ with .Params.parent }}{{ $parent = site.GetPage (printf "poles/%s" .) }}{{ end }}
+<div class="page-head">
+  <div class="container">
+    <p class="label">
+      <a href="{{ site.Home.RelPermalink }}#poles">Pôles</a>
+      {{ with $parent }}· <a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ else }}· pôle {{ .Params.numero }}{{ end }}
+    </p>
+    <h1 class="page-head__title">{{ .Title }}</h1>
+    <p class="page-head__intro">{{ .Params.accroche }}</p>
+  </div>
+</div>
+<div class="container">
+
+  {{ if .Params.statut }}
+  {{/* Pôle en construction ou service fermé : page minimale, renvoi au contact. */}}
+  <div class="section-bas">
+    {{ partial "statut-pole.html" . }}
+    {{ with .Params.prestations }}
+    <h2 class="h-section">Ce que nous proposions</h2>
+    <ul class="puces puces--discretes">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+    {{ end }}
+    {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+    {{ with $parent }}<p><a class="lien-suite" href="{{ .RelPermalink }}">Retour au pôle {{ .Title }}</a></p>{{ end }}
+  </div>
+
+  {{ else }}
+  <div class="row section-bas">
+    <div class="col-lg-6 mb-5 mb-lg-0">
+      <h2 class="h-section">{{ .Params.volet_titre | default "Ce que nous faisons" }}</h2>
+      <ul class="puces">{{ range .Params.prestations }}<li>{{ . }}</li>{{ end }}</ul>
+      {{ with .Params.methodes }}
+      <h2 class="h-section">Méthodes et outils</h2>
+      <ul class="puces puces--discretes">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+      {{ end }}
+      {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+    </div>
+    <div class="col-lg-6">
+      {{ partial "specimen.html" .Params.specimen }}
+    </div>
+  </div>
+
+  {{/* Sous-pages du pôle (ex. Transcription sous OCR/HTR), après le volet principal. */}}
+  {{ range .Params.sous_pages }}{{ with site.GetPage (printf "poles/%s" .) }}
+  <section class="section-bas sous-pole" aria-labelledby="titre-{{ .File.ContentBaseName }}">
+    <h2 id="titre-{{ .File.ContentBaseName }}" class="h-section">{{ .Title }}</h2>
+    <p class="sous-pole__accroche">{{ .Params.accroche }}</p>
+    {{ with .Params.statut }}<p class="sous-pole__statut"><span class="statut__etiquette">{{ if eq . "ferme" }}Service fermé actuellement{{ else }}En construction{{ end }}</span></p>{{ end }}
+    <a class="lien-suite" href="{{ .RelPermalink }}">En savoir plus<span class="sr-only"> : {{ .Title }}</span></a>
+  </section>
+  {{ end }}{{ end }}
+
+  {{/* Démos du pôle (data/demos.yml). */}}
+  {{ $demos := slice }}
+  {{/* Démos et réalisations sont rattachées à UN seul pôle (champ `pole`). */}}
+  {{ $demos = where hugo.Data.demos "pole" $slug }}
+  {{ with $demos }}
+  <section class="section-bas" id="demos" aria-labelledby="titre-demos">
+    <h2 id="titre-demos" class="h-section">Essayer</h2>
+    {{ range . }}{{ partial "demo.html" . }}{{ end }}
+  </section>
+  {{ end }}
+
+  {{ with where (where site.RegularPages "Section" "realisations") "Params.pole" $slug }}
+  <section class="section-bas" id="realisations" aria-labelledby="titre-real">
+    <h2 id="titre-real" class="h-section">Réalisations</h2>
+    {{ range . }}
+    {{ partial "realisation-resume.html" (dict "page" . "image" false) }}
+    {{ end }}
+  </section>
+  {{ end }}
+  {{ end }}
+
+  {{/* Experts du pôle (data/equipe.yml), sous réserve d'accord en production. */}}
+  {{ $experts := slice }}
+  {{ range partial "equipe-visible.html" . }}{{ if in (.poles | default slice) $slug }}{{ $experts = $experts | append . }}{{ end }}{{ end }}
+  {{ with $experts }}
+  <section class="section-bas" aria-labelledby="titre-experts">
+    <h2 id="titre-experts" class="h-section">Experts du pôle</h2>
+    <ul class="row list-unstyled trombi">
+      {{ range . }}{{ partial "personne.html" (merge . (dict "poles" slice "role" "" "photo" "")) }}{{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
+</div>
+{{ partial "appel-contact.html" . }}
+{{ end }}
