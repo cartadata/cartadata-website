@@ -1,9 +1,0 @@
-{{/* Bandeau d'un pôle en construction ou d'un service fermé, avec renvoi au contact.
-     Argument : la page. */}}
-{{- with .Params.statut -}}
-<div class="statut statut--{{ . }}" role="note">
-  <p class="statut__etiquette">{{ if eq . "ferme" }}Service fermé actuellement{{ else }}Pôle en construction{{ end }}</p>
-  <p class="statut__texte">{{ $.Params.statut_texte }}</p>
-  <p class="mb-0"><a class="btn-cd" href="{{ "contact/" | relURL }}#clients">Nous écrire</a></p>
-</div>
-{{- end -}}

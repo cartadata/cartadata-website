@@ -49,7 +49,7 @@ brochure_url = "documents/2025-cartadata-brochure-bilan.pdf"
 # Philosophie « un clic » : chaque pôle OUVERT est directement dans le menu ; les pôles en
 # construction (annotation, numérisation) sont sur l'accueil et /poles/.
 [[menus.main]]
-name = "OCR, HTR, transcription"
+name = "OCR et HTR"
 url = "/poles/htr/"
 weight = 1
 

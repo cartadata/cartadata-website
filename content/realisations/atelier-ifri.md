@@ -16,6 +16,8 @@ chiffres:
 liens:
   - titre: "Code et carnets de l'atelier"
     url: "https://github.com/icimathieu/atelier_spatialisation_INHA"
+  - titre: "Notre annonce sur LinkedIn"
+    url: "https://www.linkedin.com/posts/le-consortium-humanum-distam-a-fait-appel-share-7472286609074393090-0sfG/"
   - titre: "L'école d'été (Inalco)"
     url: "https://www.inalco.fr/actualites/de-la-fermeture-au-partage-une-ecole-dete-internationale-consacree-au-patrimoine-de"
 equipe: ["Mathieu Rivière", "Maxime Létoffé"]

@@ -18,7 +18,7 @@
 #
 # Sources : PV de l'AG du 03/11/2026 et liste des dirigeants (admin/) pour le bureau élu ;
 # mail du nouveau bureau et journal de bord (11/11/2026) pour le bureau étendu et les experts.
-# Accords recueillis par Mathieu (18/11/2026). Cursus donnés par Mathieu (19/11/2026).
+# Accords recueillis par Mathieu (18/11/2026 ; Chahan le 20/11/2026). Cursus donnés par Mathieu (19/11/2026).
 # Photos (19/11/2026) : LinkedIn, fournies et attribuées par Mathieu ; Owen et Chahan = portraits de la page de l'École ;
 # Mathias = recadrage d'une photo de groupe (basse définition). Pas de photo pour les experts hors bureau (décision 19/11).
 annee: "2026-2027"
@@ -70,8 +70,7 @@ membres:
     role: "Coordinateur"
     parcours: "Responsable du master « Humanités numériques »"
     photo: "images/equipe/chahan-vidal-gorene.jpg"
-    # ⚠ Pas dans la liste d'accords du 18/11 : à confirmer avant de passer à true.
-    accord: false
+    accord: true
   # --- Experts de pôle hors bureau ---
   - nom: "Maxime Létoffé"
     poles: ["geolocalisation"]

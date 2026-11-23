@@ -1,7 +1,2 @@
-{{/* Pôles de premier niveau (sans `parent`), dans l'ordre des poids.
-     Usage : {{ range partial "poles-liste.html" . }} */}}
-{{- $poles := slice -}}
-{{- range (where site.RegularPages "Section" "poles").ByWeight -}}
-  {{- if not .Params.parent }}{{ $poles = $poles | append . }}{{ end -}}
-{{- end -}}
-{{- return $poles -}}
+{{/* Pôles dans l'ordre des poids. Usage : {{ range partial "poles-liste.html" . }} */}}
+{{- return (where site.RegularPages "Section" "poles").ByWeight -}}
