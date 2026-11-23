@@ -45,6 +45,12 @@ page_ecole_url = "https://www.chartes.psl.eu/vie-de-campus/vie-etudiante-et-asso
 brochure_url = "documents/2025-cartadata-brochure-bilan.pdf"
 
 ################### Navigation principale ####################
+# Filigrane incrusté à la compilation dans les images de partenaires (préfixe de chemin -> texte).
+[params.filigranes]
+"images/vaucluse/" = "Archives départementales de Vaucluse · CartaData"
+"images/realisations/illzach" = "Commune d'Illzach · CartaData"
+"images/realisations/iheid" = "IHEID · CartaData"
+
 [menus]
 # Philosophie « un clic » : chaque pôle OUVERT est directement dans le menu ; les pôles en
 # construction (annotation, numérisation) sont sur l'accueil et /poles/.

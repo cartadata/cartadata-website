@@ -18,7 +18,7 @@
       {{ with .Params.pages }}
       <div class="row real-pages">
         {{ range . }}
-        {{ $grand := (resources.Get .image).Resize "1600x webp q80" }}
+        {{ $grand := partial "image-web.html" (dict "src" .image "largeur" 1000) }}
         <figure class="col-sm-4 real-pages__item">
           <a href="{{ $grand.RelPermalink }}">{{ partial "figure.html" (dict "src" .image "alt" .alt "largeur" 360 "loading" "eager") }}<span class="sr-only"> (image en grand)</span></a>
           <figcaption class="real-pages__legende">{{ .legende }}</figcaption>
