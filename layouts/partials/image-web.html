@@ -1,0 +1,18 @@
+{{/* Version web d'une image d'assets/ : redimensionnée en WebP et, pour les images de partenaires,
+     filigranée (params.filigranes : préfixe de chemin -> texte). Les sources du dépôt (public) sont
+     déjà réduites à 1000 px au plus grand côté.
+     Appel : partial "image-web.html" (dict "src" "images/..." "largeur" 720 "q" 80) -> ressource. */}}
+{{- $img := resources.Get .src -}}
+{{- $l := math.Min .largeur $img.Width | int -}}
+{{- $r := $img.Resize (printf "%dx webp q%d" $l (.q | default 80)) -}}
+{{- range $prefixe, $texte := site.Params.filigranes -}}
+  {{- if hasPrefix $.src $prefixe -}}
+    {{- $t := printf "© %s" $texte -}}
+    {{- $taille := math.Max 11 (div $r.Width 48) | int -}}
+    {{- $y := sub $r.Height (mul $taille 2) -}}
+    {{- $r = $r.Filter
+        (images.Text $t (dict "color" "#000000" "size" $taille "x" (add 13 0) "y" (add $y 1)))
+        (images.Text $t (dict "color" "#ffffff" "size" $taille "x" 12 "y" $y)) -}}
+  {{- end -}}
+{{- end -}}
+{{- return $r -}}

@@ -26,9 +26,9 @@ hugo server                   # http://localhost:1313
 
 ## Contribuer
 
-On ne pousse pas directement sur `main` : on ouvre une **pull request**. Le workflow
-`test-build.yml` vérifie que le site compile ; une fois la PR fusionnée, `hugo.yml`
-déploie sur GitHub Pages.
+On ne pousse pas directement sur `main` : une branche, puis une **pull request** vers
+`main`, décrite en quelques puces (les modifications faites). Le workflow `test-build.yml`
+vérifie que le site compile ; une fois la PR fusionnée, `hugo.yml` déploie sur GitHub Pages.
 
 ⚠ Le CSS compilé doit rester 100 % ASCII (voir `assets/scss/main.scss`), et dans les
 gabarits on n'écrit jamais `"/" | relURL` (le site vit sous `/cartadata-website/`).

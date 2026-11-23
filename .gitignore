@@ -11,6 +11,3 @@ hugo_stats.json
 # --- Divers ---
 .DS_Store
 node_modules/
-
-# --- Photo sans accord de publication confirmé (gardée en local) ---
-assets/images/equipe/chahan-vidal-gorene.jpg

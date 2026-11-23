@@ -13,7 +13,7 @@
 .pole-link--compact {
   padding: 1.1rem 0 1.4rem;
   gap: 1rem;
-  .pole-link__num { font-size: 1.9rem; min-width: 2.6rem; }
+  .pole-link__num { font-size: 1.9rem; min-width: 2.6rem; flex-shrink: 0; width: 3rem; }
   .pole-link__titre { font-size: 1.3rem; margin-bottom: 0.3rem; }
   .pole-link__demo, .pole-link__statut { margin-top: 0.35rem; }
 }
@@ -87,6 +87,10 @@
 
 // Réalisation ----------------------------------------------------------
 .real-figure { margin: 0 0 2.5rem; img { display: block; width: 100%; height: auto; } }
+.real-pages { margin-bottom: 2rem; }
+.real-pages__item { margin: 0 0 1.5rem; img { display: block; width: 100%; height: auto; border: 1px solid $filet; } }
+.real-pages__legende { font-family: $font-mono; font-size: 0.75rem; color: $gris; margin-top: 0.5rem; }
+.prose table { width: 100%; margin: 0 0 1.5rem; border-collapse: collapse; font-size: 0.95rem; th, td { padding: 0.4rem 0.6rem 0.4rem 0; border-bottom: 1px solid $filet; text-align: left; } th { font-weight: 600; } }
 .fiche {
   margin: 0 0 1rem;
   border-top: 1px solid $encre;
@@ -130,24 +134,11 @@
 .pole-link--construction, .pole-link--ferme {
   border-top-color: $filet;
   .pole-link__num, .pole-link__titre { color: $gris; }
+  // Pas de page : aucun effet de survol.
+  &:hover .pole-link__titre { color: $gris; text-decoration: none; }
 }
 .pole-link__statut { display: inline-block; margin-top: 0.75rem; font-family: $font-mono; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: $gris; border: 1px dashed $gris; padding: 0.1rem 0.45rem; }
 .pole-bloc--construction { .pole-bloc__num, .pole-bloc__titre a { color: $gris; } }
-.statut__etiquette { font-family: $font-mono; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: $rouge; margin-bottom: 0.5rem; }
-.statut {
-  border-left: 3px solid $rouge;
-  background: $papier;
-  padding: 1.5rem 1.75rem;
-  margin-bottom: 2.5rem;
-  max-width: 44rem;
-  &__texte { font-size: 1.1rem; }
-}
-.sous-pole {
-  border-top: 1px solid $filet;
-  padding-top: 1.5rem;
-  &__accroche { max-width: 40rem; }
-  &__statut .statut__etiquette { display: inline-block; border: 1px solid $rouge; padding: 0.1rem 0.45rem; }
-}
 .autre-besoin { margin: 2rem 0 0; padding-top: 1.25rem; border-top: 1px dashed $filet; }
 
 // Trombinoscope (association, pages de pôle) -------------------------------

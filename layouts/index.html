@@ -46,19 +46,20 @@
     <div class="section-head">
       <h2 id="titre-poles">Nos pôles</h2>
     </div>
-    {{/* Grille compacte : chaque pôle renvoie à sa page (spécimens, démos, réalisations). */}}
+    {{/* Grille compacte : chaque pôle ouvert renvoie à sa page (spécimens, démos, réalisations).
+         Les pôles en construction ou fermés n'ont pas de page : simple mention, non cliquable. */}}
     <ol class="row list-unstyled mb-0 grille-poles">
       {{ range $poles }}
       {{ $slug := .File.ContentBaseName }}
       <li class="col-md-6 col-lg-4 grille-poles__item">
-        <a href="{{ .RelPermalink }}" class="pole-link pole-link--compact{{ with .Params.statut }} pole-link--{{ . }}{{ end }}">
+        {{ with .Params.statut }}<div class="pole-link pole-link--compact pole-link--{{ . }}">{{ else }}<a href="{{ .RelPermalink }}" class="pole-link pole-link--compact">{{ end }}
           <span class="pole-link__num" aria-hidden="true">{{ .Params.numero }}</span>
           <span class="pole-link__body">
             <span class="pole-link__titre">{{ .Title }}</span>
-            {{ if .Params.statut }}<span class="pole-link__statut">en construction</span>
-            {{ else if where hugo.Data.demos "pole" $slug }}<span class="pole-link__demo">démo en ligne</span>{{ end }}
+            {{ with .Params.statut }}<span class="pole-link__statut">{{ if eq . "ferme" }}service fermé{{ else }}en construction{{ end }}</span>
+            {{ else }}{{ if where hugo.Data.demos "pole" $slug }}<span class="pole-link__demo">démo en ligne</span>{{ end }}{{ end }}
           </span>
-        </a>
+        {{ if .Params.statut }}</div>{{ else }}</a>{{ end }}
       </li>
       {{ end }}
     </ol>

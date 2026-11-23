@@ -22,6 +22,7 @@
   {{- else if eq .type "image" }}
   <div class="specimen__image">{{ partial "figure.html" (dict "src" .image "alt" .alt "largeur" 720) }}</div>
   {{ with .lecture }}{{ partial "lecture.html" . }}{{ end }}
+  {{ with .lignes }}<div class="specimen__texte">{{ range . }}<p{{ with .lang }} lang="{{ . }}"{{ end }}{{ with .dir }} dir="{{ . }}"{{ end }}>{{ .texte }}</p>{{ end }}</div>{{ end }}
   {{- end }}
   {{ with .source }}<figcaption class="specimen__source">{{ . }}</figcaption>{{ end }}
 </figure>
