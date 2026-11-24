@@ -57,6 +57,10 @@
   dd { margin: 0; color: $encre; }
 }
 
+// Note de bas de colonne (page Contact)
+.appel-note { font-size: 0.7em; margin-left: 0.1rem; a { text-decoration: none; } }
+.notes { margin-top: 2rem; padding-top: 0.75rem; border-top: 1px solid $filet; &__num { font-weight: 600; margin-right: 0.3rem; } a { text-decoration: none; } }
+
 // Pôles : étiquettes -----------------------------------------------------
 .poles {
   display: flex;
@@ -142,10 +146,10 @@
 .appel {
   background: $rouge;
   color: $blanc;
-  padding: 1.1rem 0;
-  &__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 2rem; }
+  padding: 0.75rem 0;
+  &__inner { min-height: calc(#{$bande} - 1.5rem); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem 2rem; }
   &__texte { margin: 0; }
-  &__titre { font-family: $font-titre; font-weight: 400; font-size: 1.35rem; color: $blanc; }
+  &__titre { font-family: $font-titre; font-weight: 400; font-size: 1.1rem; color: $blanc; }
   &__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem; margin: 0; }
   &__mail { color: rgba($blanc, 0.85); font-size: 0.95rem; a { color: $blanc; } }
   // Bouton inversé sur fond rouge
