@@ -6,7 +6,7 @@ periode: "automne 2026"
 # Un seul pôle par réalisation : elle n'apparaît que sur la page de ce pôle.
 pole: "htr"
 resume: "Transcrire automatiquement les délibérations du conseil municipal d'Illzach, en écriture allemande Kurrent, en français et sur deux colonnes bilingues : une dizaine de modèles comparés à des transcriptions de référence, puis une chaîne de production."
-equipe: ["Charles Planque", "Manon Remot", "Brieuc Montfort"]
+equipe: ["Charles Planque", "Manon Remot", "Brieuc Monfort"]
 # Vignette (pôle, accueil) et image d'en-tête du pôle I.
 vignette: "images/realisations/illzach-1827-extrait.jpg"
 # Pages d'exemple : uniquement antérieures à 1930 (pas de particuliers nommés récents).
