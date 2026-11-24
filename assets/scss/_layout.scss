@@ -64,6 +64,12 @@
   &__title { font-size: clamp(2.3rem, 5vw, 3.6rem); max-width: 20ch; margin-bottom: 1.25rem; }
   &__intro { font-size: 1.2rem; line-height: 1.55; max-width: 44rem; color: $texte; margin-bottom: 0; }
 }
+.lien-linkedin { margin: 1rem 0 0; font-weight: 600; a { color: $rouge; } }
+.pole-entete {
+  margin: 0;
+  img { display: block; width: 100%; height: auto; border: 1px solid $filet; }
+  &__legende { font-family: $font-mono; font-size: 0.75rem; color: $gris; margin-top: 0.5rem; }
+}
 
 // Sections --------------------------------------------------------------
 .section { padding: clamp(3rem, 7vw, 5.5rem) 0; }
@@ -95,18 +101,21 @@
 .site-footer {
   background: $encre;
   color: #d8d2ca;
-  padding: 2.75rem 0 2.25rem;
+  padding: 0;
   font-size: 0.92rem;
   a { color: $blanc; }
+  // Les deux lignes du pied ont la hauteur du bandeau rouge (.appel) : $bande.
   &__haut {
+    min-height: $bande;
+    padding: 0.75rem 0;
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     gap: 0.75rem 2rem;
   }
   &__id { margin: 0; }
-  &__name { font-family: $font-titre; font-size: 1.35rem; color: $blanc; margin-right: 0.6rem; }
+  &__name { font-family: $font-titre; font-size: 1.1rem; color: $blanc; margin-right: 0.6rem; }
   &__liens {
     display: flex;
     flex-wrap: wrap;
@@ -122,8 +131,8 @@
     gap: 1rem;
     // Filet très discret entre les deux lignes du pied.
     border-top: 1px solid rgba($blanc, 0.08);
-    padding-top: 1.25rem;
-    margin-top: 1.5rem;
+    min-height: $bande;
+    padding: 0.75rem 0;
     color: #b3aca3;
   }
   &__ecole img { height: auto; display: block; }

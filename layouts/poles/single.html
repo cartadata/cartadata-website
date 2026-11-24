@@ -1,13 +1,28 @@
 {{ define "main" }}
 {{ $slug := .File.ContentBaseName }}
+{{/* En-tête : image facultative tirée d'une réalisation du pôle (champ `entete` = slug de la réalisation ;
+     image = sa `vignette`, sinon son `image`). */}}
+{{ $entete := "" }}{{ with .Params.entete }}{{ $entete = site.GetPage (printf "realisations/%s" .) }}{{ end }}
+{{ $img := "" }}{{ with $entete }}{{ $img = .Params.vignette | default .Params.image }}{{ end }}
 <div class="page-head">
   <div class="container">
-    <p class="label">
-      <a href="{{ site.Home.RelPermalink }}#poles">Pôles</a>
-      · pôle {{ .Params.numero }}
-    </p>
-    <h1 class="page-head__title">{{ .Title }}</h1>
-    <p class="page-head__intro">{{ .Params.accroche }}</p>
+    <div class="row align-items-end">
+      <div class="{{ if $img }}col-lg-7{{ else }}col-12{{ end }}">
+        <p class="label">
+          Pôle {{ .Params.numero }}
+        </p>
+        <h1 class="page-head__title">{{ .Title }}</h1>
+        <p class="page-head__intro">{{ .Params.accroche }}</p>
+      </div>
+      {{ with $img }}
+      <div class="col-lg-5 mt-4 mt-lg-0">
+        <figure class="pole-entete">
+          {{ partial "figure.html" (dict "src" . "alt" "" "largeur" 520 "loading" "eager") }}
+          <figcaption class="pole-entete__legende">Extrait de <a href="#{{ $entete.File.ContentBaseName }}">{{ $entete.Title }}</a>, plus bas</figcaption>
+        </figure>
+      </div>
+      {{ end }}
+    </div>
   </div>
 </div>
 <div class="container">
@@ -16,17 +31,15 @@
     <div class="col-lg-6 mb-5 mb-lg-0">
       <h2 class="h-section">Ce que nous faisons</h2>
       <ul class="puces">{{ range .Params.prestations }}<li>{{ . }}</li>{{ end }}</ul>
-      {{ with .Params.methodes }}
-      <h2 class="h-section">Méthodes et outils</h2>
-      <ul class="puces puces--discretes">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
-      {{ end }}
       {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
     </div>
+    {{ with .Params.methodes }}
     <div class="col-lg-6">
-      {{ partial "specimen.html" .Params.specimen }}
+      <h2 class="h-section">Méthodes et outils</h2>
+      <ul class="puces puces--discretes">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
     </div>
+    {{ end }}
   </div>
-
 
   {{/* Démos du pôle (data/demos.yml). */}}
   {{ $demos := slice }}
@@ -43,7 +56,7 @@
   <section class="section-bas" id="realisations" aria-labelledby="titre-real">
     <h2 id="titre-real" class="h-section">Réalisations</h2>
     {{ range . }}
-    {{ partial "realisation-resume.html" (dict "page" . "image" false) }}
+    {{ partial "realisation.html" . }}
     {{ end }}
   </section>
   {{ end }}

@@ -13,6 +13,7 @@ chiffres:
     libelle: "documents transcrits et décrits"
   - valeur: "18 %"
     libelle: "d'erreurs par caractère pour les meilleurs modèles de langue, contre 41 % pour le meilleur outil d'HTR classique"
+equipe: ["Mélina Conter", "Adonis Dulaurent", "Damien Conceicao", "Charles Planque"]
 liens:
   - titre: "Code, comparatif et transcriptions (GitHub)"
     url: "https://github.com/Phineaax/FORAIN"
@@ -28,7 +29,3 @@ Un fonds d'archives lié au peintre Jean-Louis Forain (1852-1931) : correspondan
 2. **Production** : transcription de 44 nouveaux documents, de toutes les catégories du fonds, par le modèle retenu.
 3. **Description** : un court résumé de chaque document, dont la qualité a été évaluée par croisement de plusieurs modèles.
 4. **Livraison** d'un tableau unique : fichier, catégorie, transcription, description.
-
-## Ce qu'il faut retenir
-
-Sur ces écritures du XXe siècle, les modèles de langue lisent deux fois mieux que les outils classiques non réentraînés. Les transcriptions sont bonnes dans l'ensemble, mais quelques documents difficiles produisent des hallucinations : une relecture humaine reste nécessaire.

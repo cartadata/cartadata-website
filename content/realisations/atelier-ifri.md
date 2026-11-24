@@ -11,13 +11,13 @@ chiffres:
     libelle: "fiches photographiques lues"
   - valeur: "2"
     libelle: "écritures : persan et translittération latine"
-  - valeur: "4"
-    libelle: "carnets Colab publiés"
+  - valeur: "3"
+    libelle: "carnets Colab de lecture et de localisation"
+# Post LinkedIn associé (affiché sous le résumé, ici et sur la page du pôle).
+linkedin: "https://www.linkedin.com/posts/le-consortium-humanum-distam-a-fait-appel-share-7472286609074393090-0sfG/"
 liens:
   - titre: "Code et carnets de l'atelier"
     url: "https://github.com/icimathieu/atelier_spatialisation_INHA"
-  - titre: "Notre annonce sur LinkedIn"
-    url: "https://www.linkedin.com/posts/le-consortium-humanum-distam-a-fait-appel-share-7472286609074393090-0sfG/"
   - titre: "L'école d'été (Inalco)"
     url: "https://www.inalco.fr/actualites/de-la-fermeture-au-partage-une-ecole-dete-internationale-consacree-au-patrimoine-de"
 equipe: ["Mathieu Rivière", "Maxime Létoffé"]
@@ -33,10 +33,9 @@ Le fonds photographique de l'Institut français de recherche en Iran compte quel
 2. **Structuration** en commune, monument et reste de la légende, par un petit modèle de langue dont le décodage est contraint : il ne peut recopier que des fragments exacts du texte lu. Trois modèles comparés à conditions égales.
 3. **Localisation** des monuments par deux voies comparées : une recherche déterministe dans Wikidata, précise mais au faible rappel, et un modèle chercheur doublé d'un modèle juge, qui retrouve environ deux fois et demie plus de monuments.
 4. **Géocodage des communes** (ArcGIS, Wikidata) et carte.
-5. **Exploration de l'image** : détection des zones de la fiche (photographie, légende persane, légende française) et regroupement des photographies par similarité.
 
 ## L'atelier
 
-Le 19 juin 2026, nous avons animé la journée de spatialisation de l'école d'été : le matin sur la lecture et la structuration, l'après-midi sur la localisation. Les quatre carnets sont publiés et exécutables sur Google Colab.
+Le 19 juin 2026, nous avons animé la journée de spatialisation de l'école d'été : le matin sur la lecture et la structuration, l'après-midi sur la localisation. Les carnets sont publiés et exécutables sur Google Colab ; celui d'exploration de l'image (détection et regroupement) relève du pôle Vision par ordinateur.
 
 Les images du fonds ne sont pas diffusées : seuls le code et les sorties textuelles le sont.

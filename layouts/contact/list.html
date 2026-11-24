@@ -1,13 +1,14 @@
 {{ define "main" }}
 {{ partial "page-header.html" . }}
+{{/* Deux colonnes : à gauche les institutions (devis), à droite les élèves de l'École (adhésion). */}}
 <div class="container section-bas">
   <div class="row">
     <section class="col-md-6 mb-5 contact-bloc" id="clients" aria-labelledby="titre-clients">
-      <h2 id="titre-clients" class="h-section">Vous avez un projet</h2>
+      <h2 id="titre-clients" class="h-section">Institutions : demander un devis</h2>
       <h3 class="contact-bloc__sous-titre">Comment se passe une mission ?</h3>
       <ol class="etapes">
         <li>Vous décrivez votre besoin via le formulaire de demande de devis, ou par courriel, même s'il ne correspond à aucun de nos pôles.</li>
-        <li>Nous en discutons avec vous, puis l'association vous adresse une convention d'étude : la mission, son calendrier, son prix.</li>
+        <li>Nous en discutons avec vous, puis l'association vous adresse une convention d'étude (un devis) : la mission, son calendrier, son prix.</li>
         <li>Les experts du pôle concerné constituent l'équipe et suivent l'avancement et la qualité.</li>
         <li>Les livrables sont remis dans des formats ouverts et documentés.</li>
       </ol>
@@ -17,13 +18,39 @@
       <p class="contact-mail">{{ partial "mailto-protege.html" (dict "adresse" site.Params.email) }}</p>
     </section>
     <section class="col-md-6 mb-5 contact-bloc" id="etudiants" aria-labelledby="titre-etudiants">
-      <h2 id="titre-etudiants" class="h-section">Vous étudiez à l'École</h2>
-      <p>CartaData confie à ses membres des missions rémunérées. Indiquez-nous les pôles qui vous intéressent : nous vous contacterons quand une mission correspondra à votre profil. Vous pouvez aussi vous proposer comme expert d'un pôle, pour définir les missions avec les clients et les prestataires.</p>
+      <h2 id="titre-etudiants" class="h-section">Élèves et étudiants de l'École : adhérer</h2>
+      <p>L'adhésion est <strong>gratuite</strong> ; elle est ouverte aux élèves de l'École nationale des chartes et à ses diplômés depuis moins d'un an.</p>
+
+      <h3 class="contact-bloc__sous-titre">Première adhésion</h3>
+      <p>Envoyez-nous par courriel :</p>
+      <ul class="puces">
+        <li>une pièce d'identité ;</li>
+        <li>votre carte Vitale, ou une attestation de droits ;</li>
+        <li>votre certificat de scolarité ;</li>
+        <li>un RIB ;</li>
+        <li>le <a href="{{ "documents/cartadata-contrat-adhesion.docx" | relURL }}" download>contrat d'adhésion<span class="sr-only"> (document Word)</span></a>, rempli et signé ;</li>
+        <li>élèves archivistes-paléographes : la <a href="{{ "documents/cartadata-autorisation-cumul-modele.docx" | relURL }}" download>demande d'autorisation de cumul<span class="sr-only"> (modèle, document Word)</span></a>, remplie et signée<sup class="appel-note"><a href="#note-cumul" id="renvoi-cumul" aria-describedby="titre-notes">1</a></sup>.</li>
+      </ul>
+
+      <h3 class="contact-bloc__sous-titre">Renouveler son adhésion</h3>
+      <p>Chaque année, envoyez-nous :</p>
+      <ul class="puces">
+        <li>votre certificat de scolarité à jour ;</li>
+        <li>le <a href="{{ "documents/cartadata-contrat-adhesion.docx" | relURL }}" download>contrat d'adhésion<span class="sr-only"> (document Word)</span></a> de l'année, signé ;</li>
+        <li>élèves archivistes-paléographes : la <a href="{{ "documents/cartadata-autorisation-cumul-modele.docx" | relURL }}" download>demande d'autorisation de cumul<span class="sr-only"> (modèle, document Word)</span></a> renouvelée pour l'année<sup class="appel-note"><a href="#note-cumul" aria-describedby="titre-notes">1</a></sup>.</li>
+      </ul>
+      <p class="contact-mail">{{ partial "mailto-protege.html" (dict "adresse" site.Params.email) }}</p>
+
       {{ with site.Params.sondage_url }}
+      <h3 class="contact-bloc__sous-titre">Indiquer vos pôles</h3>
+      <p>Dites-nous quels pôles vous intéressent : nous vous contacterons quand une mission correspondra à votre profil. Vous pouvez aussi vous proposer comme expert d'un pôle.</p>
       <p><a class="btn-cd" href="{{ . }}" target="_blank" rel="noopener">Indiquer mes pôles<span class="sr-only"> (formulaire Microsoft Forms, nouvelle fenêtre)</span></a></p>
       <p class="texte-secondaire petit">Connexion avec votre compte de l'École requise.</p>
       {{ end }}
-      <p class="texte-secondaire">Une question sur l'adhésion : écrivez à la même adresse.</p>
+      <div class="notes">
+        <h3 id="titre-notes" class="sr-only">Note</h3>
+        <p id="note-cumul" class="texte-secondaire petit"><span class="notes__num">1</span> L'autorisation de cumul n'est pas obligatoire pour adhérer : c'est dans votre intérêt légal bien compris. <a href="#renvoi-cumul" aria-label="Retour au texte">&#8617;</a></p>
+      </div>
     </section>
   </div>
 </div>

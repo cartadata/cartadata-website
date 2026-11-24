@@ -6,7 +6,7 @@ intro: "CartaData est l'aspirante Junior-Entreprise de l'École nationale des ch
 
 ## Qui sommes-nous ?
 
-Nos membres sont archivistes paléographes, étudiants des masters *Technologies numériques appliquées à l'histoire* et *Humanités numériques*, ou doctorants. Ils mettent en pratique, sur des fonds réels, ce qu'ils apprennent à l'École : lire les écritures anciennes, décrire et classer des archives, modéliser des données, entraîner et évaluer des modèles.
+Nos membres sont archivistes-paléographes, étudiants des masters *Technologies numériques appliquées à l'histoire* et *Humanités numériques*, ou doctorants rattachés à l'École.
 
 Nous mettons en application nos compétences académiques pour répondre aux besoins de particuliers et d'institutions, autour des données patrimoniales, de la culture et des humanités numériques.
 

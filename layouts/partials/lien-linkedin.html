@@ -1,0 +1,4 @@
+{{/* Lien vers le post LinkedIn associé à une réalisation (champ `linkedin`). Argument : la page. */}}
+{{- with .Params.linkedin -}}
+<p class="lien-linkedin"><a href="{{ . }}" target="_blank" rel="noopener">Voir le post LinkedIn associé<span class="sr-only"> (nouvelle fenêtre)</span></a></p>
+{{- end -}}

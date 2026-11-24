@@ -26,7 +26,7 @@
       {{ range $visibles }}{{ if in (.poles | default slice) $slug }}{{ $noms = $noms | append .nom }}{{ end }}{{ end }}
       {{ with $noms }}
       <div class="experts__ligne">
-        <dt>{{ with site.GetPage (printf "poles/%s" $slug) }}<a href="{{ .RelPermalink }}"><span class="poles__num">{{ .Params.numero }}</span> {{ .Params.court }}</a>{{ end }}</dt>
+        <dt>{{ with site.GetPage (printf "poles/%s" $slug) }}<span class="poles__num">{{ .Params.numero }}</span> {{ .Params.court }}{{ end }}</dt>
         <dd>{{ delimit . ", " " et " }}</dd>
       </div>
       {{ end }}

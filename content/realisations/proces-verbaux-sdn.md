@@ -15,13 +15,13 @@ chiffres:
     libelle: "avec 200 pages seulement : l'annotation paie"
   - valeur: "9"
     libelle: "types de zones : colonnes, séances, sessions, notes, numéros de page"
+# Post LinkedIn associé (affiché sous le résumé, ici et sur la page du pôle).
+linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7469703449979510784/"
 liens:
   - titre: "Le portail LoN Sampo (Aalto University)"
     url: "https://minutes.ldf.fi"
   - titre: "Le projet « Minutes of Multilateralism » (IHEID)"
     url: "https://www.graduateinstitute.ch/international-programmes/minutes-multilateralism"
-  - titre: "Notre annonce sur LinkedIn"
-    url: "https://www.linkedin.com/feed/update/urn:li:activity:7469703449979510784/"
 ---
 
 ## Le corpus
@@ -29,8 +29,6 @@ liens:
 Les procès-verbaux de l'Assemblée de la Société des Nations (1920-1946) sont imprimés sur deux colonnes, le français à gauche, l'anglais à droite, avec des titres de séance, des notes de bas de page et une pagination propres à chaque langue. Le Centre for Digital Humanities and Multilateralism de l'IHEID les rend interrogeables dans le cadre du projet « Minutes of Multilateralism ».
 
 ## Notre mission
-
-Ce fut la première mission d'ampleur de CartaData : reconnaissance du texte, repérage des entités nommées et structuration des données. Pour que chaque phrase soit rattachée à sa langue et à sa séance, il fallait d'abord découper la page.
 
 1. **Annotation** de pages des années 1923 à 1926 dans Label Studio, selon neuf types de zones.
 2. **Entraînement** d'un détecteur d'objets léger (YOLO11 nano), d'abord sur 200 pages, puis sur 600.

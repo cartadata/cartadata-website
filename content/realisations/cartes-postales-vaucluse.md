@@ -7,7 +7,7 @@ periode: "2026"
 pole: "geolocalisation"
 image: "images/vaucluse/FRAD084_07FI007_0038.jpg"
 image_alt: "Carte postale ancienne sépia : le Rhône et, à l'horizon, la silhouette d'Avignon."
-resume: "Une chaîne qui lit chaque carte postale, en déduit commune, lieu-dit et monument, et la pose sur une carte. Le résultat est publié par le Département."
+resume: "Une chaîne qui lit chaque carte postale, en déduit commune, lieu-dit et monument, et la positionne sur une carte. Le résultat est publié par le Département."
 chiffres:
   - valeur: "2 779"
     libelle: "cartes localisées sur 2 928"
@@ -32,8 +32,6 @@ equipe: ["Mathieu Rivière", "Maxime Létoffé", "Mathias Garnier"]
 Les Archives départementales de Vaucluse ont numérisé 2 928 cartes postales anciennes. Le lieu représenté est indiqué tantôt dans la notice, tantôt sur la carte elle-même, et parfois nulle part.
 
 ## La méthode
-
-Le projet est né au hackathon 2026 de l'École, organisé avec les Archives. Nous l'avons ensuite consolidé jusqu'à la mise en production :
 
 1. **Moissonnage** des images et des métadonnées depuis le site des Archives.
 2. **Lecture** de chaque carte par un modèle vision-langage ouvert (Qwen2.5-VL, 7 milliards de paramètres) : légendes imprimées, annotations manuscrites, contenu de l'image.

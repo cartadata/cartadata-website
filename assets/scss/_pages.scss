@@ -88,6 +88,15 @@
 // Réalisation ----------------------------------------------------------
 .real-figure { margin: 0 0 2.5rem; img { display: block; width: 100%; height: auto; } }
 .real-pages { margin-bottom: 2rem; }
+// Réalisation affichée en entier sur la page du pôle
+.real {
+  padding: 2.5rem 0 1rem;
+  border-top: 1px solid $filet;
+  &:first-of-type { border-top: 0; padding-top: 0.5rem; }
+  &__titre { font-size: clamp(1.6rem, 3vw, 2rem); margin: 0.25rem 0 0.75rem; }
+  &__resume { font-size: 1.1rem; max-width: 46rem; margin-bottom: 0; }
+  .prose h4 { font-family: $font-titre; font-size: 1.35rem; font-weight: 400; margin: 1.75rem 0 0.6rem; }
+}
 .real-pages__item { margin: 0 0 1.5rem; img { display: block; width: 100%; height: auto; border: 1px solid $filet; } }
 .real-pages__legende { font-family: $font-mono; font-size: 0.75rem; color: $gris; margin-top: 0.5rem; }
 .prose table { width: 100%; margin: 0 0 1.5rem; border-collapse: collapse; font-size: 0.95rem; th, td { padding: 0.4rem 0.6rem 0.4rem 0; border-bottom: 1px solid $filet; text-align: left; } th { font-weight: 600; } }

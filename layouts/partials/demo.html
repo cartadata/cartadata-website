@@ -10,7 +10,7 @@
       <p>{{ $d.resume }}</p>
       <p class="demo__actions">
         <a class="btn-cd" href="{{ $d.url }}" target="_blank" rel="noopener">Ouvrir dans un nouvel onglet<span class="sr-only"> : {{ $d.titre }}</span></a>
-        {{ with $d.realisation }}{{ with site.GetPage (printf "realisations/%s" .) }}<a class="lien-suite" href="{{ .RelPermalink }}">Le projet</a>{{ end }}{{ end }}
+        {{ with $d.realisation }}{{ with site.GetPage (printf "realisations/%s" .) }}<a class="lien-suite" href="#{{ .File.ContentBaseName }}">Le projet, plus bas</a>{{ end }}{{ end }}
       </p>
       {{ with $d.note }}<p class="texte-secondaire petit">{{ . }}</p>{{ end }}
     </div>

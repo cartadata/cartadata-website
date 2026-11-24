@@ -10,7 +10,7 @@ items:
     libelle: "partenaires et clients"
   - valeur: "53"
     libelle: "membres"
-    detail: "archivistes paléographes, étudiants des masters TNAH et Humanités numériques, doctorants"
+    detail: "archivistes-paléographes, étudiants des masters TNAH et Humanités numériques, doctorants"
   - valeur: "15 000"
     libelle: "pages ou données"
     detail: "transcrites, expertisées et valorisées"
