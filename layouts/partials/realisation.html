@@ -1,0 +1,46 @@
+{{/* Une réalisation, en entier, sur la page de son pôle (pas de page propre : site « un clic »).
+     Argument : la page de la réalisation. Ancre = son nom de fichier (#registres-illzach…). */}}
+{{- $p := . -}}
+<article class="real" id="{{ $p.File.ContentBaseName }}" aria-labelledby="titre-{{ $p.File.ContentBaseName }}">
+  <p class="real-resume__meta"><span>{{ $p.Params.periode }}</span> · {{ $p.Params.partenaire }}</p>
+  <h3 id="titre-{{ $p.File.ContentBaseName }}" class="real__titre">{{ $p.Title }}</h3>
+  <p class="real__resume">{{ $p.Params.resume }}</p>
+  {{ partial "lien-linkedin.html" $p }}
+  <div class="row mt-4">
+    <div class="col-lg-8 mb-4 mb-lg-0">
+      {{ with $p.Params.image }}
+      <figure class="real-figure">{{ partial "figure.html" (dict "src" . "alt" $p.Params.image_alt "largeur" 760) }}</figure>
+      {{ end }}
+      {{ with $p.Params.pages }}
+      <div class="row real-pages">
+        {{ range . }}
+        <figure class="col-sm-4 real-pages__item">
+          {{ partial "figure.html" (dict "src" .image "alt" .alt "largeur" 360) }}
+          <figcaption class="real-pages__legende">{{ .legende }}</figcaption>
+        </figure>
+        {{ end }}
+      </div>
+      {{ end }}
+      {{/* Intertitres du texte (## en Markdown) ramenés en h4, sous le titre h3 de la réalisation. */}}
+      <div class="prose">{{ $p.Content | replaceRE "<(/?)h2" "<${1}h4" | safeHTML }}</div>
+    </div>
+    <aside class="col-lg-4" aria-label="Fiche du projet : {{ $p.Title }}">
+      <dl class="fiche">
+        <div><dt>Partenaire</dt><dd>{{ $p.Params.partenaire }}</dd></div>
+        <div><dt>Période</dt><dd>{{ $p.Params.periode }}</dd></div>
+        {{ with $p.Params.equipe }}<div><dt>Équipe</dt><dd>{{ delimit . ", " " et " }}</dd></div>{{ end }}
+      </dl>
+      {{ with $p.Params.chiffres }}
+      <ul class="chiffres chiffres--colonne list-unstyled">
+        {{ range . }}<li><span class="chiffres__valeur">{{ .valeur }}</span> <span class="chiffres__libelle">{{ .libelle }}</span></li>{{ end }}
+      </ul>
+      {{ end }}
+      {{ with $p.Params.liens }}
+      <h4 class="h-section">Voir en ligne</h4>
+      <ul class="liste-filet list-unstyled">
+        {{ range . }}<li><a class="liste-filet__lien" href="{{ .url }}" target="_blank" rel="noopener"><span class="liste-filet__titre">{{ .titre }}</span><span class="sr-only"> (nouvelle fenêtre)</span></a></li>{{ end }}
+      </ul>
+      {{ end }}
+    </aside>
+  </div>
+</article>

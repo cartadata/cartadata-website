@@ -1,7 +1,7 @@
-{{/* Étiquettes de pôles, liées à leur page. Argument : liste de slugs. */}}
+{{/* Étiquettes de pôles (texte seul : hors accueil et menu, pas de lien interne). Argument : liste de slugs. */}}
 {{- $slugs := . -}}
 <ul class="poles list-unstyled">
   {{- range (where (where site.RegularPages "Section" "poles") ".File.ContentBaseName" "in" $slugs).ByWeight }}
-  <li><a href="{{ .RelPermalink }}" class="poles__item"><span class="poles__num">{{ .Params.numero }}</span> {{ .Params.court }}</a></li>
+  <li><span class="poles__item"><span class="poles__num">{{ .Params.numero }}</span> {{ .Params.court }}</span></li>
   {{- end }}
 </ul>

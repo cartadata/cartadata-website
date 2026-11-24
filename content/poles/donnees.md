@@ -16,15 +16,6 @@ methodes:
   - "Décodage contraint : le modèle ne peut recopier que des fragments du texte source"
   - "Vérité terrain annotée à la main pour mesurer la qualité"
   - "Alignement sur des référentiels (Wikidata, référentiels officiels)"
-specimen:
-  type: "code"
-  titre: "La fiche lue au pôle I, structurée"
-  code: |
-    {
-      "fiche":    "IFRI_FAP_10273_R",
-      "region":   "Khorassan",
-      "commune":  "Ferdowsi",
-      "monument": "Ferdowsi Imamzādeh Tūn"
-    }
-  source: "Sortie du modèle Gemma 3 (4B) à décodage contraint : chaque valeur est une sous-chaîne exacte de la lecture OCR. Le modèle peut s'abstenir, il ne peut pas réécrire."
+# Image d'en-tête tirée de cette réalisation du pôle (facultatif).
+entete: "proces-verbaux-sdn"
 ---

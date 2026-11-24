@@ -64,6 +64,12 @@
   &__title { font-size: clamp(2.3rem, 5vw, 3.6rem); max-width: 20ch; margin-bottom: 1.25rem; }
   &__intro { font-size: 1.2rem; line-height: 1.55; max-width: 44rem; color: $texte; margin-bottom: 0; }
 }
+.lien-linkedin { margin: 1rem 0 0; font-weight: 600; a { color: $rouge; } }
+.pole-entete {
+  margin: 0;
+  img { display: block; width: 100%; height: auto; border: 1px solid $filet; }
+  &__legende { font-family: $font-mono; font-size: 0.75rem; color: $gris; margin-top: 0.5rem; }
+}
 
 // Sections --------------------------------------------------------------
 .section { padding: clamp(3rem, 7vw, 5.5rem) 0; }

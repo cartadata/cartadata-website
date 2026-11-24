@@ -57,48 +57,6 @@
   dd { margin: 0; color: $encre; }
 }
 
-// Spécimen ---------------------------------------------------------------
-.specimen {
-  margin: 0;
-  background: $papier;
-  border: 1px solid $filet;
-  padding: 1.5rem;
-  &__titre { font-family: $font-titre; font-size: 1.25rem; color: $encre; margin-bottom: 1rem; }
-  &__texte {
-    background: $blanc;
-    border-left: 3px solid $rouge;
-    padding: 1rem 1.25rem;
-    font-family: $font-mono;
-    font-size: 0.98rem;
-    p { margin: 0 0 0.4rem; &:last-child { margin: 0; } }
-    [lang="fa"] { font-family: $font-persan; font-size: 1.15rem; line-height: 1.9; }
-  }
-  &__traduction { margin: 1rem 0 0; font-style: italic; .label { display: inline; font-style: normal; margin-right: 0.4rem; } }
-  &__code {
-    background: $encre;
-    color: #f1ece4;
-    font-family: $font-mono;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    padding: 1.1rem 1.25rem;
-    margin: 0;
-    overflow-x: auto;
-    code { color: inherit; font-size: inherit; }
-  }
-  &__scroll { overflow-x: auto; }
-  &__table {
-    width: 100%;
-    font-size: 0.92rem;
-    border-collapse: collapse;
-    background: $blanc;
-    th, td { padding: 0.55rem 0.75rem; border-bottom: 1px solid $filet; text-align: left; vertical-align: top; }
-    thead th { font-family: $font-mono; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: $gris; border-bottom-color: $encre; }
-    tbody th { font-family: $font-mono; font-weight: 400; font-size: 0.82rem; white-space: nowrap; }
-  }
-  &__image img { display: block; width: 100%; height: auto; margin-bottom: 1rem; }
-  &__source { font-size: 0.85rem; color: $gris; margin-top: 1rem; line-height: 1.5; }
-}
-
 // Pôles : étiquettes -----------------------------------------------------
 .poles {
   display: flex;
@@ -199,4 +157,3 @@
   .liste-filet__titre { flex-basis: calc(100% - 2rem); }
   .liste-filet__meta { order: 3; flex-basis: 100%; }
 }
-.specimen__texte [dir="rtl"] { text-align: right; }

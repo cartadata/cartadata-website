@@ -78,17 +78,16 @@
     <div class="row">
       {{ with $real }}
       {{ $pole := site.GetPage (printf "poles/%s" .Params.pole) }}
+      {{ $ancre := printf "%s#%s" $pole.RelPermalink .File.ContentBaseName }}
       <article class="col-lg-7 mb-5 mb-lg-0 une" aria-labelledby="titre-une-real">
         <p class="label">Dernière réalisation</p>
-        {{ with .Params.image }}<a href="{{ $real.RelPermalink }}" tabindex="-1" aria-hidden="true">{{ partial "figure.html" (dict "src" . "alt" "" "largeur" 640 "class" "une__img") }}</a>{{ end }}
+        {{ with .Params.vignette | default .Params.image }}<a href="{{ $ancre }}" tabindex="-1" aria-hidden="true">{{ partial "figure.html" (dict "src" . "alt" "" "largeur" 640 "class" "une__img") }}</a>{{ end }}
         <p class="real-resume__meta"><span>{{ .Params.periode }}</span> · {{ .Params.partenaire }}</p>
-        <h3 id="titre-une-real" class="une__titre"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <h3 id="titre-une-real" class="une__titre"><a href="{{ $ancre }}">{{ .Title }}</a></h3>
         <p>{{ .Params.resume }}</p>
+        {{ partial "lien-linkedin.html" . }}
         {{ with .Params.chiffres }}<ul class="chiffres list-unstyled">{{ range . }}<li><span class="chiffres__valeur">{{ .valeur }}</span> <span class="chiffres__libelle">{{ .libelle }}</span></li>{{ end }}</ul>{{ end }}
-        <p class="une__liens">
-          <a class="lien-suite" href="{{ .RelPermalink }}">Le projet</a>
-          {{ with $pole }}<a class="lien-suite" href="{{ .RelPermalink }}#realisations">Pôle {{ .Params.numero }} · {{ .Title }}</a>{{ end }}
-        </p>
+        <p class="une__liens"><a class="lien-suite" href="{{ $ancre }}">Pôle {{ $pole.Params.numero }} · {{ $pole.Title }}</a></p>
       </article>
       {{ end }}
       {{ with $demo }}

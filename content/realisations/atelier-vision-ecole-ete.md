@@ -13,15 +13,15 @@ chiffres:
     libelle: "zones détectées sur chaque fiche : photographie, légende persane, légende française"
   - valeur: "60"
     libelle: "fiches annotées pour entraîner le détecteur"
+# Post LinkedIn associé (affiché sous le résumé, ici et sur la page du pôle).
+linkedin: "https://www.linkedin.com/posts/le-consortium-humanum-distam-a-fait-appel-share-7472286609074393090-0sfG/"
 liens:
-  - titre: "Carnet : détection et regroupement (fonds IFRI)"
+  - titre: "Carnet de Mathieu Rivière et Thaïs Raffray : détection et regroupement (fonds IFRI)"
     url: "https://github.com/icimathieu/atelier_spatialisation_INHA/blob/main/scripts/2026-06-19_notebooks/morning/02_image_exploration_IFRI.ipynb"
-  - titre: "Carnet : classification non supervisée"
+  - titre: "Carnet de Thaïs Raffray, Chiara Tedesco et Denise Atzori : classification non supervisée"
     url: "https://github.com/DeniseAtzori/ThierryNum-ENC/blob/main/Notebooks/Clustering_efficientnet_afg.ipynb"
   - titre: "Programme de l'école d'été"
     url: "https://etudes-areales.cnrs.fr/programme-summer-school/"
-  - titre: "Notre annonce sur LinkedIn"
-    url: "https://www.linkedin.com/posts/le-consortium-humanum-distam-a-fait-appel-share-7472286609074393090-0sfG/"
 equipe: ["Mathieu Rivière", "Thaïs Raffray", "Chiara Tedesco", "Denise Atzori"]
 ---
 

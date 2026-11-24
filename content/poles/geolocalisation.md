@@ -14,13 +14,6 @@ methodes:
   - "Géocodage en cascade (Nominatim, Wikidata, ArcGIS)"
   - "Validation croisée entre plusieurs sources de localisation"
   - "Cartographie web (Leaflet, Folium) et SIG bureautique (QGIS)"
-specimen:
-  type: "table"
-  titre: "Trois cartes postales, trois niveaux"
-  colonnes: ["Cote", "Commune", "Lieu-dit", "Monument"]
-  lignes:
-    - ["07FI003_0066", "Apt", "—", "Hôtel de Ville et Sous-Préfecture"]
-    - ["07FI150_0002", "Visan", "Rue Calade", "—"]
-    - ["07FI002_0007", "Ansouis", "—", "Le Château"]
-  source: "Sorties de la chaîne de géolocalisation, vérifiées à la main. Archives départementales de Vaucluse."
+# Image d'en-tête tirée de cette réalisation du pôle (facultatif).
+entete: "cartes-postales-vaucluse"
 ---

@@ -15,13 +15,13 @@ chiffres:
     libelle: "avec 200 pages seulement : l'annotation paie"
   - valeur: "9"
     libelle: "types de zones : colonnes, séances, sessions, notes, numéros de page"
+# Post LinkedIn associé (affiché sous le résumé, ici et sur la page du pôle).
+linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7469703449979510784/"
 liens:
   - titre: "Le portail LoN Sampo (Aalto University)"
     url: "https://minutes.ldf.fi"
   - titre: "Le projet « Minutes of Multilateralism » (IHEID)"
     url: "https://www.graduateinstitute.ch/international-programmes/minutes-multilateralism"
-  - titre: "Notre annonce sur LinkedIn"
-    url: "https://www.linkedin.com/feed/update/urn:li:activity:7469703449979510784/"
 ---
 
 ## Le corpus
