@@ -22,7 +22,7 @@ liens:
     url: "https://github.com/DeniseAtzori/ThierryNum-ENC/blob/main/Notebooks/Clustering_efficientnet_afg.ipynb"
   - titre: "Programme de l'école d'été"
     url: "https://etudes-areales.cnrs.fr/programme-summer-school/"
-equipe: ["Mathieu Rivière", "Thaïs Raffray", "Chiara Tedesco", "Denise Atzori"]
+equipe: ["Thaïs Raffray", "Chiara Tedesco", "Denise Atzori"]
 ---
 
 ## Le contexte

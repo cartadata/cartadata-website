@@ -6,6 +6,7 @@ periode: "automne 2026"
 # Un seul pôle par réalisation : elle n'apparaît que sur la page de ce pôle.
 pole: "htr"
 resume: "Transcrire automatiquement les délibérations du conseil municipal d'Illzach, en écriture allemande Kurrent, en français et sur deux colonnes bilingues : une dizaine de modèles comparés à des transcriptions de référence, puis une chaîne de production."
+equipe: ["Charles Planque", "Manon Remot", "Brieuc Montfort"]
 # Vignette (pôle, accueil) et image d'en-tête du pôle I.
 vignette: "images/realisations/illzach-1827-extrait.jpg"
 # Pages d'exemple : uniquement antérieures à 1930 (pas de particuliers nommés récents).
@@ -24,13 +25,11 @@ chiffres:
     libelle: "d'erreurs par caractère sur l'allemand Kurrent"
   - valeur: "4,3 %"
     libelle: "sur les pages bilingues français-allemand"
-  - valeur: "0,004 $"
-    libelle: "de coût de calcul par page en production"
 ---
 
 ## Le fonds
 
-Seize registres de délibérations du conseil municipal, de 1811 à 1958 : un siècle et demi d'histoire d'une commune alsacienne, qui change de langue au gré des annexions. On y trouve trois cas de figure : l'allemand en écriture Kurrent, le français, et des pages sur deux colonnes, français et allemand en regard.
+Seize registres de délibérations du conseil municipal, de 1811 à 1958. On y trouve trois cas de figure : l'allemand en écriture Kurrent, le français, et des pages sur deux colonnes, français et allemand en regard.
 
 ## La méthode
 

@@ -30,8 +30,6 @@ Les procès-verbaux de l'Assemblée de la Société des Nations (1920-1946) sont
 
 ## Notre mission
 
-Ce fut la première mission d'ampleur de CartaData : reconnaissance du texte, repérage des entités nommées et structuration des données. Pour que chaque phrase soit rattachée à sa langue et à sa séance, il fallait d'abord découper la page.
-
 1. **Annotation** de pages des années 1923 à 1926 dans Label Studio, selon neuf types de zones.
 2. **Entraînement** d'un détecteur d'objets léger (YOLO11 nano), d'abord sur 200 pages, puis sur 600.
 3. **Pré-annotation** : le modèle propose ses cadres dans Label Studio, l'annotateur n'a plus qu'à les corriger.

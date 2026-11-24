@@ -8,7 +8,6 @@ prestations:
   - "Reconnaissance automatique (OCR, HTR) sur des corpus imprimés ou manuscrits de grande taille."
   - "Vérification et correction de transcriptions automatiques, y compris par modèles de langue."
   - "Données structurées tirées des transcriptions : personnes, lieux, dates, références."
-  - "Conseil pour mettre en place une chaîne de transcription automatique dans votre institution."
 methodes:
   - "Paléographie médiévale et moderne, pour contrôler ce que lit la machine"
   - "Modèles de lecture de documents (OCR/HTR, modèles vision-langage)"

@@ -7,8 +7,6 @@ accroche: "Encodage, nettoyage et normalisation : transformer des transcriptions
 prestations:
   - "Encodage et structuration : XML, JSON, CSV, références bibliographiques (BibTeX, Zotero)."
   - "Nettoyage et normalisation de jeux de données (Excel, SQL, Python)."
-  - "Extraction d'informations depuis du texte libre par modèles de langue, avec garde-fous contre l'invention."
-  - "Correction et re-correction de données existantes par modèles de langue, sous contrôle humain."
   - "Collecte par moissonnage web et interrogation d'API (Wikidata, BnF, api.gouv.fr)."
   - "Modélisation de bases de données et interopérabilité."
   - "Data visualisation : graphiques et infographies (Python, Tableau)."

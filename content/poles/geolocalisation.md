@@ -5,8 +5,8 @@ numero: "II"
 weight: 2
 accroche: "Cartographie et spatialisation des données : retrouver où se trouve ce que montre ou nomme un document, et le restituer sur une carte que vous pouvez réutiliser."
 prestations:
-  - "Géocodage de toponymes anciens ou mal orthographiés, avec désambiguïsation."
   - "Extraction d'informations géographiques depuis des documents, des images ou des cartes."
+  - "Géocodage de toponymes anciens ou mal orthographiés, avec désambiguïsation."
   - "Contrôle de cohérence : référentiels officiels des communes, filtres de distance, relecture humaine."
   - "Cartes interactives intégrables à votre site."
   - "Livrables ouverts : CSV, GeoJSON, couches lisibles dans QGIS ou sur OpenStreetMap."

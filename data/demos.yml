@@ -10,7 +10,6 @@
   hebergeur: "Hugging Face Spaces"
   pole: "geolocalisation"
   realisation: "cartes-postales-vaucluse"
-  note: "Le Space se met en veille sans visite : le premier chargement peut prendre une minute."
 - titre: "Valider l'indexation d'un fonds photographique"
   resume: "IAnahid présente les photographies du fonds Thierry (INHA) lot par lot, avec le type de vue et le sujet proposés par les modèles : on accepte ou on corrige pour tout le lot, puis on exporte un tableau pour le catalogue."
   url: "https://enc-psl-ianahid.hf.space/"
@@ -18,4 +17,4 @@
   hebergeur: "Hugging Face Spaces · ENC-PSL"
   pole: "vision"
   realisation: "fonds-thierry-inha"
-  note: "Les annotations ne sont pas conservées : exportez-les avant de fermer. Premier chargement possiblement lent."
+  note: "Les annotations ne sont pas conservées : exportez-les avant de fermer."
