@@ -17,7 +17,7 @@ liens:
   - titre: "Code, carnets et modèles (GitHub)"
     url: "https://github.com/DeniseAtzori/ThierryNum-ENC"
   - titre: "L'application IAnahid"
-    url: "https://enc-psl-ianahid.hf.space/"
+    url: "https://ielenia-ianahid-test.hf.space/"
 equipe: ["Denise Atzori", "Thaïs Raffray", "Chiara Tedesco"]
 ---
 
